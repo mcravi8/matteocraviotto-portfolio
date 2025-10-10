@@ -31,10 +31,10 @@ body {
     padding: 0 40px;
 }
 
-/* Fixed Info Sidebar */
+/* Fixed Info Sidebar - LEFT SIDE */
 .info-sidebar {
     position: fixed;
-    right: 40px;
+    left: 40px;
     top: 50%;
     transform: translateY(-50%);
     background: white;
@@ -247,6 +247,20 @@ section h2 {
     font-size: 0.95em;
 }
 
+.cv-download {
+    display: inline-block;
+    margin-top: 12px;
+    color: var(--primary);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.cv-download:hover {
+    color: var(--primary-dark);
+}
+
 .skills-box {
     background: white;
     padding: 24px;
@@ -314,12 +328,23 @@ section h2 {
     color: var(--text);
 }
 
+.project-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    align-items: flex-end;
+}
+
 .project-link {
     color: var(--primary);
     text-decoration: none;
     font-size: 0.9em;
     font-weight: 500;
     white-space: nowrap;
+}
+
+.project-link:hover {
+    color: var(--primary-dark);
 }
 
 .project-tech {
@@ -501,7 +526,7 @@ footer p {
 /* Mobile Responsive */
 @media (max-width: 1400px) {
     .info-sidebar {
-        right: 20px;
+        left: 20px;
         width: 180px;
         padding: 20px;
     }
