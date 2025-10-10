@@ -78,6 +78,12 @@ body {
     margin-bottom: 2px;
 }
 
+.sidebar-role {
+    font-size: 0.75em;
+    color: var(--text-light);
+    margin-bottom: 2px;
+}
+
 .sidebar-meta {
     font-size: 0.75em;
     color: #999;
@@ -133,7 +139,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 140px 40px 100px;
+    padding: 120px 40px 60px;
 }
 
 .hero-content {
@@ -141,17 +147,17 @@ nav {
 }
 
 .hero h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     font-weight: 700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     letter-spacing: -0.03em;
 }
 
 .hero-subtitle {
-    font-size: 1.25em;
+    font-size: 1.15em;
     color: var(--text-light);
-    margin-bottom: 40px;
-    line-height: 1.7;
+    margin-bottom: 30px;
+    line-height: 1.6;
 }
 
 .hero-links {
@@ -201,7 +207,7 @@ nav {
 
 /* Section Styles */
 section {
-    padding: 100px 0;
+    padding: 80px 0;
 }
 
 section h2 {
@@ -215,7 +221,7 @@ section h2 {
     text-align: center;
     color: var(--text-light);
     font-size: 1.1em;
-    margin-bottom: 60px;
+    margin-bottom: 50px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -224,6 +230,7 @@ section h2 {
 /* About Section */
 .about {
     background: var(--bg-alt);
+    padding: 60px 0;
 }
 
 .about-content {
