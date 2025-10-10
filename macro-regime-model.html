@@ -252,15 +252,15 @@
         
         <h3>1️⃣ Data Preparation</h3>
         <p class="content-text">Standardized GDP, inflation, and unemployment data (FRED / WRDS). Resampled to monthly frequency and normalized (z-score).</p>
-        <div class="image-placeholder">📊 Macro data preprocessing or indicator panel</div>
+        <img src="images/macro_data_prep.png" alt="Macro Data Preprocessing" class="project-image">
         <!-- Replace with: <img src="images/macro-data-prep.png" alt="Macro Data Preprocessing" class="project-image"> -->
         
         <h3>2️⃣ Regime Identification (Markov-Switching)</h3>
         <p class="content-text">Fit a <strong>3-state MarkovRegression</strong> to standardized GDP growth. Extracted smoothed regime probabilities, expected durations, and transition matrix.</p>
-        <div class="image-placeholder">📈 Regime Probabilities plot (showing clustering across cycles)</div>
+        <img src="images/regime_probabilities.png" alt="Regime Probabilities" class="project-image">
         <!-- Replace with: <img src="images/regime-probabilities.png" alt="Regime Probabilities" class="project-image"> -->
         
-        <div class="image-placeholder">📉 Regime Panels — GDP + Recession/Moderate/Expansion probabilities</div>
+        <img src="images/regime_panels.png" alt="Regime Panels" class="project-image">
         <!-- Replace with: <img src="images/regime-panels.png" alt="Regime Panels" class="project-image"> -->
         
         <div class="highlight-box">
@@ -274,7 +274,7 @@
         
         <h3>3️⃣ Yield-Curve Modeling (Nelson–Siegel + VAR)</h3>
         <p class="content-text">Decomposed Treasury yields into Level (β₀), Slope (β₁), Curvature (β₂). Estimated <strong>VAR(2)</strong> between yield factors and regime probabilities. Found that yield-curve <strong>flattening precedes recessions</strong> and <strong>steepening signals recovery</strong>.</p>
-        <div class="image-placeholder">📐 Nelson–Siegel factors — Level, Slope, Curvature</div>
+        <img src="images/ns_factors.png" alt="Nelson-Siegel Factors" class="project-image">
         <!-- Replace with: <img src="images/yield-curve-factors.png" alt="Nelson-Siegel Factors" class="project-image"> -->
         
         <h3>4️⃣ Regime-Conditioned Portfolio Optimization</h3>
@@ -284,7 +284,7 @@
             <li><strong>Moderate Growth</strong> → Balanced exposure</li>
             <li><strong>Expansion</strong> → Risk-on tilt (higher equity, shorter duration)</li>
         </ul>
-        <div class="image-placeholder">💰 Portfolio Performance — cumulative return curve</div>
+        <img src="images/portfolio_performance.png" alt="Portfolio Performance" class="project-image">
         <!-- Replace with: <img src="images/portfolio-performance.png" alt="Portfolio Performance" class="project-image"> -->
         
         <h2 class="section-title">📊 Quantitative Results</h2>
