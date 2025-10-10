@@ -3,178 +3,297 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Matteo Craviotto</title>
+    <title>Matteo Craviotto - Quantitative Researcher</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Matteo Craviotto</h1>
-        <p class="subtitle">Quantitative Researcher · Financial Engineering</p>
-        <div class="contact">
-            <span>Los Angeles, CA</span>
-            <span>·</span>
-            <a href="tel:+18052150502">+1 805-215-0502</a>
-            <span>·</span>
-            <a href="mailto:Matteo.Craviotto@gmail.com">Matteo.Craviotto@gmail.com</a>
-            <span>·</span>
-            <a href="https://github.com/mcravi8" target="_blank">GitHub</a>
-            <span>·</span>
-            <a href="https://www.linkedin.com/in/matteocraviotto/" target="_blank">LinkedIn</a>
+    <!-- Fixed Education Sidebar -->
+    <aside class="education-sidebar">
+        <h3>Education</h3>
+        <div class="edu-item">
+            <h4>USC</h4>
+            <p class="edu-degree">MS Financial Engineering</p>
+            <p class="edu-meta">GPA 3.9 · Dec 2026</p>
         </div>
-    </header>
+        <div class="edu-item">
+            <h4>ESCP</h4>
+            <p class="edu-degree">BS Finance</p>
+            <p class="edu-meta">GPA 3.7 · 2024</p>
+        </div>
+    </aside>
 
-    <section class="education">
-        <h2>Education</h2>
-        <div class="item">
-            <div class="item-header">
-                <div>
-                    <h3>University of Southern California</h3>
-                    <p class="degree">Master of Science, Financial Engineering · GPA: 3.9</p>
-                </div>
-                <span class="date">Expected Dec 2026</span>
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="#home" class="logo">MC</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#projects">Projects</a>
+                <a href="#experience">Experience</a>
+                <a href="#contact">Contact</a>
             </div>
         </div>
-        <div class="item">
-            <div class="item-header">
-                <div>
-                    <h3>ESCP Business School</h3>
-                    <p class="degree">Bachelor of Science, Finance · GPA: 3.7</p>
-                </div>
-                <span class="date">2024</span>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Matteo Craviotto</h1>
+            <p class="hero-subtitle">Quantitative Researcher specializing in machine learning alpha signals, regime modeling, and derivatives pricing</p>
+            <div class="hero-links">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-meta">
+                <span>Los Angeles, CA</span>
+                <span>·</span>
+                <span>MS Financial Engineering @ USC</span>
             </div>
         </div>
     </section>
 
-    <section class="projects">
-        <h2>Quantitative Research Projects</h2>
-        
-        <div class="project">
-            <div class="project-header">
-                <h3>Macro Regime Duration Model</h3>
-                <a href="https://github.com/mcravi8" target="_blank" class="github-link">GitHub →</a>
-            </div>
-            <p class="tech">Python · statsmodels · pandas · NumPy · matplotlib · Markov-switching · yield-curve modeling</p>
-            <ul>
-                <li>Built 3-state Markov-switching model detecting latent Recession/Growth/Expansion regimes in GDP, inflation, unemployment</li>
-                <li>Integrated Nelson-Siegel VAR(2) yield-curve forecast and regime-conditioned mean-variance optimizer</li>
-                <li>Achieved Sharpe 1.08 vs 0.73, -45% drawdown, -28% volatility</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <div class="project-header">
-                <h3>Delta-Neutral Options Market-Making Simulator</h3>
-                <a href="https://github.com/mcravi8" target="_blank" class="github-link">GitHub →</a>
-            </div>
-            <p class="tech">Python · pandas · NumPy · LightGBM · cvxpy · Streamlit · Black-Scholes</p>
-            <ul>
-                <li>Minute-level NBBO-aware delta-neutral simulator with BS theos, Greeks, put-call parity residual</li>
-                <li>Asymmetric spreads with inventory lean, explicit fees, delta-band hedging</li>
-                <li>Backtesting + OOS runner over day CSVs; targets 8-15% fill-rate with costs</li>
-            </ul>
-        </div>
-
-        <div class="project">
-            <div class="project-header">
-                <h3>Options Parity Checker</h3>
-                <a href="https://github.com/mcravi8" target="_blank" class="github-link">GitHub →</a>
-            </div>
-        </div>
-
-        <div class="project">
-            <div class="project-header">
-                <h3>Post-Earnings Drift Backtest</h3>
-                <a href="https://github.com/mcravi8" target="_blank" class="github-link">GitHub →</a>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Driven by curiosity about market behavior, I'm a Financial Engineering student at USC focused on applying data analysis to financial markets. The race to find alpha excites me—discovering patterns in regime shifts, volatility surfaces, or cross-sectional equity signals that translate to real trading strategies.</p>
+                    <p>I'm drawn to the challenge of building models that work not just in backtest but in live markets with transaction costs and changing regimes. My interests span systematic equity research, fixed income modeling, and derivatives pricing. I see myself in quantitative research roles where statistical rigor meets practical trading constraints.</p>
+                </div>
+                <div class="skills-box">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-category">
+                        <h4>Finance & Methods</h4>
+                        <p>Time-series modeling · Portfolio optimization · Risk modeling (VaR, Monte Carlo) · Derivatives pricing · Regime detection</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Tools</h4>
+                        <p>Python · C++ · SQL · Git</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Libraries</h4>
+                        <p>pandas · numpy · statsmodels · scikit-learn · LightGBM · cvxpy · matplotlib</p>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="experience">
-        <h2>Professional Experience</h2>
-
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <h3>Numerai</h3>
-                    <p class="role">Quantitative Researcher</p>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Quantitative Research Projects</h2>
+            <p class="section-intro">Applied research in statistical modeling, algorithmic trading, and derivatives pricing</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Macro Regime Duration Model</h3>
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                    <p class="project-tech">Python · statsmodels · Markov-switching · Nelson-Siegel VAR</p>
+                    <p class="project-desc">Built 3-state Markov-switching model detecting latent Recession/Growth/Expansion regimes in GDP, inflation, and unemployment. Integrated yield-curve forecast with regime-conditioned mean-variance optimizer.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">1.08</span>
+                            <span class="metric-label">Sharpe Ratio</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">-45%</span>
+                            <span class="metric-label">Max Drawdown</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">87%</span>
+                            <span class="metric-label">Regime Persistence</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="right">
-                    <span class="date">2025 – Present</span>
-                    <span class="location">Los Angeles, CA</span>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Delta-Neutral Options Market-Making Simulator</h3>
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                    <p class="project-tech">Python · Black-Scholes · LightGBM · cvxpy · Streamlit</p>
+                    <p class="project-desc">Minute-level NBBO-aware delta-neutral simulator with BS theoretical pricing, Greeks calculation, and put-call parity residual tracking. Features asymmetric spreads with inventory lean and delta-band hedging.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">8-15%</span>
+                            <span class="metric-label">Target Fill Rate</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">550+</span>
+                            <span class="metric-label">Fills (800-min test)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Numerai ML Alpha Signals</h3>
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                    <p class="project-tech">Python · LightGBM · Purged CV · Feature Engineering</p>
+                    <p class="project-desc">Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features for market-neutral 20-day return forecasts. Deployed live in Numerai's hedge fund with automated weekly retraining.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">1.38</span>
+                            <span class="metric-label">Validation Sharpe</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">0.64</span>
+                            <span class="metric-label">Live Sharpe</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">300+</span>
+                            <span class="metric-label">Eras Tested</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Options Parity Checker</h3>
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                    <p class="project-tech">Python · Options Pricing · Real-time Data</p>
+                    <p class="project-desc">Real-time arbitrage detection tool for put-call parity violations across options chains.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Post-Earnings Drift Backtest</h3>
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                    </div>
+                    <p class="project-tech">Python · Event Study · Statistical Analysis</p>
+                    <p class="project-desc">Systematic analysis of post-earnings announcement drift patterns across market cap segments.</p>
                 </div>
             </div>
-            <ul>
-                <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
-                <li>Achieved robust validation performance (CORR ≈ 0.029, Sharpe ≈ 1.38 across 300+ eras) using LightGBM with purged time-series validation</li>
-                <li>Deployed model live in Numerai's hedge fund tournament with forward-test Sharpe ≈ 0.64</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <h3>DEFINEX</h3>
-                    <p class="role">Prompt Engineer</p>
-                </div>
-                <div class="right">
-                    <span class="date">Apr 2024 – Sep 2024</span>
-                    <span class="location">Ivrea, Italy</span>
-                </div>
-            </div>
-            <ul>
-                <li>Designed and tested prompts to optimize AI model outputs for financial/legal applications</li>
-                <li>Applied structured experimentation to test variations systematically, improving accuracy and consistency of proprietary models</li>
-                <li>Developed transferable skills in automation, model calibration, and problem-solving under uncertainty</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <h3>Euronext Securities</h3>
-                    <p class="role">Custody Intern · Income & Fiscal Services</p>
-                </div>
-                <div class="right">
-                    <span class="date">May – Nov 2023</span>
-                    <span class="location">Milan, Italy</span>
-                </div>
-            </div>
-            <ul>
-                <li>Reconciled 1,000+ annual income and corporate events across Covered Warrants, Certificates, and ABS</li>
-                <li>Engineered Excel/VBA automation that flagged late participant payments with 100% detection accuracy, cutting processing time from ~1 hour to under 1 minute</li>
-            </ul>
-        </div>
-
-        <div class="job">
-            <div class="job-header">
-                <div>
-                    <h3>Deloitte Consulting</h3>
-                    <p class="role">Junior Analyst · Financial Services Industry</p>
-                </div>
-                <div class="right">
-                    <span class="date">May – Aug 2022</span>
-                    <span class="location">Milan, Italy</span>
-                </div>
-            </div>
-            <ul>
-                <li>Contributed to design and rollout of Deloitte's first secondary-market tax-credit platform for Italian banks</li>
-                <li>Designed system logic that automated eligibility checks and transaction workflows</li>
-            </ul>
         </div>
     </section>
 
-    <section class="skills">
-        <h2>Skills</h2>
-        <div class="skill-grid">
-            <div>
-                <h4>Finance & Methods</h4>
-                <p>Time-series modeling, portfolio optimization, risk modeling (VaR, Monte Carlo), derivatives pricing</p>
-            </div>
-            <div>
-                <h4>Programming & ML</h4>
-                <p>Python, C++, SQL, Git, pandas, numpy, statsmodels, scikit-learn, LightGBM, cvxpy</p>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Numerai</h3>
+                                <p class="role">Quantitative Researcher</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">2025 – Present</span>
+                                <span class="location">Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
+                            <li>Achieved robust validation performance (CORR ≈ 0.029, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
+                            <li>Automated weekly production cycle with retraining and governance workflows</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>DEFINEX</h3>
+                                <p class="role">Prompt Engineer</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">Apr – Sep 2024</span>
+                                <span class="location">Ivrea, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Designed and tested prompts to optimize AI model outputs for financial/legal applications</li>
+                            <li>Applied structured experimentation to improve accuracy and consistency of proprietary models</li>
+                            <li>Developed transferable skills in automation and model calibration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Euronext Securities</h3>
+                                <p class="role">Custody Intern · Income & Fiscal Services</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Nov 2023</span>
+                                <span class="location">Milan, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Reconciled 1,000+ annual income and corporate events across derivatives and ABS</li>
+                            <li>Engineered Excel/VBA automation reducing processing time from ~1 hour to under 1 minute</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Deloitte Consulting</h3>
+                                <p class="role">Junior Analyst · Financial Services</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Aug 2022</span>
+                                <span class="location">Milan, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Contributed to design of Deloitte's first secondary-market tax-credit platform</li>
+                            <li>Automated eligibility checks and transaction workflows for 5+ major institutions</li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2>Get in Touch</h2>
+            <p class="section-intro">Open to quantitative research opportunities, collaborations, and discussions</p>
+            <div class="contact-grid">
+                <a href="mailto:Matteo.Craviotto@gmail.com" class="contact-card">
+                    <h3>Email</h3>
+                    <p>Matteo.Craviotto@gmail.com</p>
+                </a>
+                <a href="https://www.linkedin.com/in/matteocraviotto/" target="_blank" class="contact-card">
+                    <h3>LinkedIn</h3>
+                    <p>/in/matteocraviotto</p>
+                </a>
+                <a href="https://github.com/mcravi8" target="_blank" class="contact-card">
+                    <h3>GitHub</h3>
+                    <p>@mcravi8</p>
+                </a>
+                <a href="tel:+18052150502" class="contact-card">
+                    <h3>Phone</h3>
+                    <p>+1 805-215-0502</p>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>© 2025 Matteo Craviotto · Built with focus on clean design and quantitative depth</p>
+        </div>
+    </footer>
 </body>
 </html>
