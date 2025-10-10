@@ -103,14 +103,14 @@ nav {
 .nav-container {
     max-width: 1100px;
     margin: 0 auto;
-    padding: 20px 40px;
+    padding: 16px 40px;
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
 .logo {
-    font-size: 1.3em;
+    font-size: 1.2em;
     font-weight: 700;
     color: var(--text);
     text-decoration: none;
@@ -118,13 +118,13 @@ nav {
 
 .nav-links {
     display: flex;
-    gap: 35px;
+    gap: 30px;
 }
 
 .nav-links a {
     color: var(--text-light);
     text-decoration: none;
-    font-size: 0.95em;
+    font-size: 0.9em;
     font-weight: 500;
     transition: color 0.2s;
 }
@@ -139,7 +139,7 @@ nav {
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 120px 40px 60px;
+    padding: 100px 40px 40px;
 }
 
 .hero-content {
@@ -147,33 +147,33 @@ nav {
 }
 
 .hero h1 {
-    font-size: 3.5em;
+    font-size: 2.8em;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     letter-spacing: -0.03em;
 }
 
 .hero-subtitle {
-    font-size: 1.15em;
+    font-size: 1.05em;
     color: var(--text-light);
-    margin-bottom: 30px;
-    line-height: 1.6;
+    margin-bottom: 25px;
+    line-height: 1.5;
 }
 
 .hero-links {
     display: flex;
-    gap: 20px;
+    gap: 15px;
     justify-content: center;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
 }
 
 .btn-primary, .btn-secondary {
-    padding: 14px 32px;
+    padding: 12px 28px;
     text-decoration: none;
     font-weight: 500;
     border-radius: 6px;
     transition: all 0.2s;
-    font-size: 0.95em;
+    font-size: 0.9em;
 }
 
 .btn-primary {
@@ -198,30 +198,30 @@ nav {
 
 .hero-meta {
     color: var(--text-light);
-    font-size: 0.95em;
+    font-size: 0.85em;
 }
 
 .hero-meta span {
-    margin: 0 8px;
+    margin: 0 6px;
 }
 
 /* Section Styles */
 section {
-    padding: 80px 0;
+    padding: 60px 0;
 }
 
 section h2 {
-    font-size: 2.5em;
+    font-size: 2.2em;
     font-weight: 700;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     text-align: center;
 }
 
 .section-intro {
     text-align: center;
     color: var(--text-light);
-    font-size: 1.1em;
-    margin-bottom: 50px;
+    font-size: 1.05em;
+    margin-bottom: 40px;
     max-width: 700px;
     margin-left: auto;
     margin-right: auto;
@@ -230,37 +230,37 @@ section h2 {
 /* About Section */
 .about {
     background: var(--bg-alt);
-    padding: 60px 0;
+    padding: 50px 0;
 }
 
 .about-content {
     display: grid;
     grid-template-columns: 1.2fr 1fr;
-    gap: 60px;
-    margin-top: 50px;
+    gap: 50px;
+    margin-top: 35px;
 }
 
 .about-text p {
-    margin-bottom: 20px;
-    line-height: 1.8;
+    margin-bottom: 16px;
+    line-height: 1.7;
     color: var(--text);
-    font-size: 1.05em;
+    font-size: 1em;
 }
 
 .skills-box {
     background: white;
-    padding: 35px;
+    padding: 28px;
     border-radius: 8px;
     border: 1px solid var(--border);
 }
 
 .skills-box h3 {
-    font-size: 1.3em;
-    margin-bottom: 25px;
+    font-size: 1.2em;
+    margin-bottom: 20px;
 }
 
 .skill-category {
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 .skill-category:last-child {
@@ -525,15 +525,15 @@ footer p {
     }
 
     .hero {
-        padding: 100px 20px 60px;
+        padding: 80px 20px 40px;
     }
 
     .hero h1 {
-        font-size: 2.5em;
+        font-size: 2.2em;
     }
 
     .hero-subtitle {
-        font-size: 1.1em;
+        font-size: 1em;
     }
 
     .hero-links {
@@ -542,7 +542,8 @@ footer p {
     }
 
     .nav-links {
-        gap: 20px;
+        gap: 18px;
+        font-size: 0.85em;
     }
 
     .about-content {
@@ -580,11 +581,11 @@ footer p {
     }
 
     section {
-        padding: 60px 0;
+        padding: 50px 0;
     }
 
     section h2 {
-        font-size: 2em;
+        font-size: 1.8em;
     }
 
     .project-results {
