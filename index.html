@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <!-- Fixed Sidebar -->
     <aside class="info-sidebar">
         <div class="sidebar-section">
             <h3>Education</h3>
@@ -26,9 +25,14 @@
         <div class="sidebar-section">
             <h3>Experience</h3>
             <div class="sidebar-item">
+                <h4>Self-employed</h4>
+                <p class="sidebar-role">Algo Trader & Dev</p>
+                <p class="sidebar-meta">Sep 2024 – Present</p>
+            </div>
+            <div class="sidebar-item">
                 <h4>Numerai</h4>
                 <p class="sidebar-role">Quant Researcher</p>
-                <p class="sidebar-meta">May 2025 – Present</p>
+                <p class="sidebar-meta">May – Aug 2025</p>
             </div>
             <div class="sidebar-item">
                 <h4>DEFINEX</h4>
@@ -48,7 +52,6 @@
         </div>
     </aside>
 
-    <!-- Navigation -->
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">MC</a>
@@ -61,7 +64,6 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Matteo Craviotto</h1>
@@ -78,7 +80,6 @@
         </div>
     </section>
 
-    <!-- About Section -->
     <section id="about" class="about">
         <div class="container">
             <h2>About Me</h2>
@@ -107,7 +108,6 @@
         </div>
     </section>
 
-    <!-- Projects Section -->
     <section id="projects" class="projects">
         <div class="container">
             <h2>Quantitative Research Projects</h2>
@@ -215,7 +215,6 @@
         </div>
     </section>
 
-    <!-- Experience Section -->
     <section id="experience" class="experience">
         <div class="container">
             <h2>Professional Experience</h2>
@@ -226,18 +225,39 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>Numerai</h3>
-                                <p class="role">Quantitative Researcher</p>
+                                <h3>Self-employed</h3>
+                                <p class="role">Independent Algorithmic Trader & Developer</p>
                             </div>
                             <div class="timeline-meta">
-                                <span class="date">May 2025 – Present</span>
+                                <span class="date">Sep 2024 – Present</span>
                                 <span class="location">Los Angeles, CA</span>
                             </div>
                         </div>
                         <ul>
-                            <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
-                            <li>Achieved robust validation performance (CORR ≈ 0.029, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
-                            <li>Automated weekly production cycle with retraining and governance workflows</li>
+                            [cite_start]<li>Performed rigorous backtesting & walk-forward optimization on QuantConnect with slippage, commissions, and regime filters [cite: 21]</li>
+                            [cite_start]<li>Developed a proprietary, fully autonomous multi-regime strategy leveraging value and momentum signals, protected by macro-driven filters [cite: 23]</li>
+                            [cite_start]<li>Designing advanced predictive models using ARIMA/GARCH for next-day return forecasting across equities and forex [cite: 24]</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Numerai</h3>
+                                <p class="role">Quantitative Researcher (Competition)</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Aug 2025</span>
+                                <span class="location">Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <ul>
+                            [cite_start]<li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts [cite: 29]</li>
+                            [cite_start]<li>Achieved robust validation performance (CORR ≈ 0.039, Sharpe ≈ 1.38) using LightGBM with purged time-series validation [cite: 30]</li>
+                            [cite_start]<li>Deployed live signals to Numerai hedge fund (forward Sharpe ≈ 0.64 ongoing) [cite: 31]</li>
                         </ul>
                     </div>
                 </div>
@@ -306,7 +326,6 @@
         </div>
     </section>
 
-    <!-- Contact Section -->
     <section id="contact" class="contact">
         <div class="container">
             <h2>Get in Touch</h2>
