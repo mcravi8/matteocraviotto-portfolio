@@ -10,18 +10,15 @@
     <meta name="keywords" content="quantitative researcher, algorithmic trading, financial engineering, USC, Numerai, machine learning finance, derivatives pricing, Los Angeles">
     <meta name="author" content="Matteo Craviotto">
 
-    <!-- Open Graph / Social -->
     <meta property="og:title" content="Matteo Craviotto - Quantitative Researcher">
     <meta property="og:description" content="USC Financial Engineering student shipping live ML alpha signals and systematic trading strategies.">
     <meta property="og:url" content="https://matteocraviotto.me">
     <meta property="og:type" content="website">
 
-    <!-- Favicon (add one soon if you don’t have it) -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
     <link rel="stylesheet" href="style.css">
 
-    <!-- Smooth scrolling & active section highlight -->
     <script>
       // Smooth scrolling for all anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -58,7 +55,7 @@
     <style>
       /* Active nav link style – customize colors to match your theme */
       .nav-links a.active {
-        color: #0066ff;           /* or whatever your primary color is */
+        color: #0066ff;
         font-weight: 600;
         position: relative;
       }
@@ -88,6 +85,55 @@
       .contact-card.calendly:hover {
         transform: translateY(-4px);
         box-shadow: 0 10px 20px rgba(0,102,255,0.3);
+      }
+
+      /* --- NEW STYLES FOR LEGAL STATUS SECTION --- */
+      .legal-section {
+        background-color: #f8f9fa; /* Light gray background to separate it */
+        padding: 40px 0;
+        border-top: 1px solid #e1e4e8;
+        border-bottom: 1px solid #e1e4e8;
+      }
+      .legal-box {
+        background: white;
+        border: 1px solid #e1e4e8;
+        border-radius: 12px;
+        padding: 25px;
+        max-width: 800px;
+        margin: 0 auto;
+        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
+      }
+      .legal-header {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+        font-size: 1.2rem;
+        font-weight: 700;
+      }
+      .legal-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 20px;
+        text-align: center;
+      }
+      .legal-item h4 {
+        margin: 0 0 5px 0;
+        color: #0066ff;
+        font-size: 1rem;
+      }
+      .legal-item p {
+        margin: 0;
+        font-size: 0.9rem;
+        color: #555;
+        line-height: 1.4;
+      }
+      .legal-divider {
+        width: 1px;
+        background: #e1e4e8;
+        display: none; /* Hidden on mobile */
+      }
+      @media (min-width: 768px) {
+        .legal-divider { display: block; }
       }
     </style>
 </head>
@@ -405,6 +451,34 @@
                             <li>Contributed to design of Deloitte's first secondary-market tax-credit platform</li>
                             <li>Automated eligibility checks and transaction workflows for 5+ major institutions</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legal" class="legal-section">
+        <div class="container">
+            <div class="legal-box">
+                <h3 class="legal-header">Legal Status & Work Authorization</h3>
+                <div class="legal-grid">
+                    <div class="legal-item">
+                        <h4>F-1 Visa Holder</h4>
+                        <p>STEM-designated Master’s degree</p>
+                    </div>
+                    
+                    <div class="legal-divider"></div>
+                    
+                    <div class="legal-item">
+                        <h4>36 Months OPT</h4>
+                        <p>Eligible beginning <strong>January 2027</strong></p>
+                    </div>
+                    
+                    <div class="legal-divider"></div>
+                    
+                    <div class="legal-item">
+                        <h4>No Sponsorship Needed</h4>
+                        <p>Required until early <strong>2030</strong></p>
                     </div>
                 </div>
             </div>
