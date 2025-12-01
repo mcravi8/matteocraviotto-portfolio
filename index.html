@@ -3,7 +3,6 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
     <title>Matteo Craviotto - Quantitative Researcher & Algo Trader</title>
     <meta name="description" content="Quantitative researcher and algorithmic trader. USC MS Financial Engineering '26. Live Numerai signals, macro regime models, options market-making simulator.">
     <meta name="keywords" content="quantitative researcher, algorithmic trading, financial engineering, USC, Numerai, machine learning finance, derivatives pricing, Los Angeles">
@@ -14,34 +13,18 @@
     <meta property="og:description" content="USC Financial Engineering student shipping live ML alpha signals and systematic trading strategies.">
     <meta property="og:url" content="https://matteocraviotto.me">
     <meta property="og:type" content="website">
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* ==== NEW: Perfect fixed sidebar (never overlaps footer) ==== */
-        .info-sidebar {
-            position: fixed;
-            top: 120px;                  /* space below fixed nav */
-            left: 50px;
-            width: 300px;
-            max-height: calc(100vh - 160px);   /* leaves room for footer */
-            overflow-y: auto;
-            padding-right: 20px;
-            z-index: 10;
-        }
-        .info-sidebar::-webkit-scrollbar {
-            width: 5px;
-        }
-        .info-sidebar::-webkit-scrollbar-thumb {
-            background: rgba(0,0,0,0.2);
-            border-radius: 10px;
-        }
+        html { scroll-behavior: smooth; }
 
-        /* Active nav link */
+        /* === NAV ACTIVE HIGHLIGHT === */
         .nav-links a.active {
-            color: #0066ff !important;
+            color: #0066ff;
             font-weight: 600;
+            position: relative;
         }
         .nav-links a.active::after {
             content: '';
@@ -54,24 +37,46 @@
             border-radius: 2px;
         }
 
-        /* Calendly card */
+        /* === SIDEBAR – FIXED & PERFECT BEHAVIOR === */
+        .info-sidebar {
+            position: fixed;
+            top: 120px;                  /* starts right under the fixed nav */
+            left: 50px;
+            width: 260px;
+            max-height: calc(100vh - 140px);   /* never touches footer */
+            overflow-y: auto;
+            padding-right: 15px;
+            z-index: 10;
+        }
+        .info-sidebar::-webkit-scrollbar {
+            width: 5px;
+        }
+        .info-sidebar::-webkit-scrollbar-thumb {
+            background: rgba(0,0,0,0.2);
+            border-radius: 3px;
+        }
+
+        /* On small screens hide sidebar completely (your design is already mobile-first without it) */
+        @media (max-width: 1100px) {
+            .info-sidebar { display: none; }
+        }
+
+        /* === CALENDLY CARD === */
         .contact-card.calendly {
-            background: linear-gradient(135deg, #0066ff, #00c6ff);
-            color: white !important;
+            background: linear-gradient(135deg, #0066ff, #00d4ff);
+            color: white;
             font-weight: 600;
         }
         .contact-card.calendly:hover {
             transform: translateY(-4px);
-            box-shadow: 0 12px 25px rgba(0,102,255,0.35);
+            box-shadow: 0 10px 20px rgba(0,102,255,0.3);
         }
-
-        html { scroll-behavior: smooth; }
     </style>
 
     <script>
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function(e) {
+            anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
                     behavior: 'smooth'
@@ -79,7 +84,7 @@
             });
         });
 
-        // Active nav + make sure "Contact" stays active at bottom
+        // Active nav + force Contact at bottom
         window.addEventListener('scroll', () => {
             let current = '';
             const sections = document.querySelectorAll('section[id]');
@@ -91,7 +96,7 @@
                 }
             });
 
-            // Force Contact when near/true bottom
+            // If we're within 100px of the bottom → force Contact
             if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
                 current = 'contact';
             }
@@ -107,7 +112,6 @@
 </head>
 <body>
 
-    <!-- SIDEBAR – now perfectly fixed and never touches footer -->
     <aside class="info-sidebar">
         <div class="sidebar-section">
             <h3>Education</h3>
@@ -153,7 +157,6 @@
         </div>
     </aside>
 
-    <!-- Rest of your site (100% unchanged from your original) -->
     <nav>
         <div class="nav-container">
             <a href="#home" class="logo">MC</a>
@@ -166,10 +169,51 @@
         </div>
     </nav>
 
-    <section id="home" class="hero">…(your hero content)…</section>
-    <section id="about" class="about">…(your about content)…</section>
-    <section id="projects" class="projects">…(your projects)…</section>
-    <section id="experience" class="experience">…(your timeline)…</section>
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Matteo Craviotto</h1>
+            <p class="hero-subtitle">I am passionate about leveraging technology and quantitative methods to drive innovation through investment solutions.</p>
+            <div class="hero-links">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-meta">
+                <span>Los Angeles, CA</span>
+                <span>·</span>
+                <span>MS Financial Engineering @ USC</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Driven by curiosity about market behavior, I'm a Financial Engineering student at USC focused on applying data analysis to financial markets. The race to find alpha excites me—discovering patterns in regime shifts, volatility surfaces, or cross-sectional equity signals that translate to real trading strategies.</p>
+                    <p>I'm drawn to the challenge of building models that work not just in backtest but in live markets with transaction costs and changing regimes. I see myself in quantitative research / trading roles where statistical rigor meets practical trading constraints. My interests span systematic equity research, fixed income modeling, and derivatives pricing.</p>
+                    <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV</a>
+                </div>
+                <div class="skills-box">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-category">
+                        <h4>Finance & Methods</h4>
+                        <p>Time-series forecasting (ARIMA/ARMA/GARCH) · Portfolio optimization · Risk management · Derivatives pricing</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Tools</h4>
+                        <p>Python · C++ · SQL · Git · Pine Script · Excel/VBA</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Libraries</h4>
+                        <p>pandas · numpy · statsmodels · scikit-learn · LightGBM · cvxpy · matplotlib</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- (Keep your Projects and Experience sections exactly as you have them now — they’re perfect) -->
 
     <section id="contact" class="contact">
         <div class="container">
@@ -201,6 +245,5 @@
             <p>© 2025 Matteo Craviotto</p>
         </div>
     </footer>
-
 </body>
 </html>
