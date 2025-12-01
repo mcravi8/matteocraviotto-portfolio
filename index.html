@@ -6,21 +6,24 @@
     
     <title>Matteo Craviotto - Quantitative Researcher & Algo Trader</title>
     <meta name="description" content="Quantitative researcher and algorithmic trader. USC MS Financial Engineering '26. Live Numerai signals, macro regime models, options market-making simulator.">
+    
     <meta name="keywords" content="quantitative researcher, algorithmic trading, financial engineering, USC, Numerai, machine learning finance, derivatives pricing, Los Angeles">
     <meta name="author" content="Matteo Craviotto">
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Social -->
     <meta property="og:title" content="Matteo Craviotto - Quantitative Researcher">
     <meta property="og:description" content="USC Financial Engineering student shipping live ML alpha signals and systematic trading strategies.">
     <meta property="og:url" content="https://matteocraviotto.me">
     <meta property="og:type" content="website">
 
+    <!-- Favicon (add one soon if you don’t have it) -->
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
+
     <link rel="stylesheet" href="style.css">
 
-    <!-- Smooth scrolling + ACTIVE NAV HIGHLIGHT (fixed for Contact at bottom) -->
+    <!-- Smooth scrolling & active section highlight -->
     <script>
-      // Smooth scrolling
+      // Smooth scrolling for all anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -30,23 +33,18 @@
         });
       });
 
-      // Active nav highlighting – improved offset so Contact works at bottom
+      // Add active class to nav links on scroll
       window.addEventListener('scroll', () => {
-        let current = 'home';
-
+        let current = '';
         const sections = document.querySelectorAll('section[id]');
-        const scrollPos = window.scrollY + 200; // increased offset for tall hero/navbar
-
+        
         sections.forEach(section => {
-          if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+          const sectionTop = section.offsetTop - 100; // offset for fixed nav
+          const sectionHeight = section.clientHeight;
+          if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
           }
         });
-
-        // Special case: if we're past the last section → force Contact
-        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
-          current = 'contact';
-        }
 
         document.querySelectorAll('.nav-links a').forEach(link => {
           link.classList.remove('active');
@@ -58,9 +56,9 @@
     </script>
 
     <style>
-      /* Active nav style */
+      /* Active nav link style – customize colors to match your theme */
       .nav-links a.active {
-        color: #0066ff;
+        color: #0066ff;           /* or whatever your primary color is */
         font-weight: 600;
         position: relative;
       }
@@ -75,12 +73,16 @@
         border-radius: 2px;
       }
 
-      html { scroll-behavior: smooth; }
+      /* Make smooth scrolling work on the whole page */
+      html {
+        scroll-behavior: smooth;
+      }
 
-      /* Calendly card */
+      /* Calendly contact card styles */
       .contact-card.calendly {
         background: linear-gradient(135deg, #0066ff, #00d4ff);
         color: white;
+        border: none;
         font-weight: 600;
       }
       .contact-card.calendly:hover {
@@ -90,7 +92,6 @@
     </style>
 </head>
 <body>
-    <!-- Your entire existing body content stays 100% the same until Contact section -->
     <aside class="info-sidebar" style="top: 425px;">
         <div class="sidebar-section">
             <h3>Education</h3>
@@ -148,8 +149,267 @@
         </div>
     </nav>
 
-    <!-- All your sections (hero, about, projects, experience) stay exactly the same -->
-    <!-- ... keeping everything you already have ... -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1>Matteo Craviotto</h1>
+            <p class="hero-subtitle">I am passionate about leveraging technology and quantitative methods to drive innovation through investment solutions.</p>
+            <div class="hero-links">
+                <a href="#projects" class="btn-primary">View Projects</a>
+                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            </div>
+            <div class="hero-meta">
+                <span>Los Angeles, CA</span>
+                <span>·</span>
+                <span>MS Financial Engineering @ USC</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <p>Driven by curiosity about market behavior, I'm a Financial Engineering student at USC focused on applying data analysis to financial markets. The race to find alpha excites me—discovering patterns in regime shifts, volatility surfaces, or cross-sectional equity signals that translate to real trading strategies.</p>
+                    <p>I'm drawn to the challenge of building models that work not just in backtest but in live markets with transaction costs and changing regimes. I see myself in quantitative research / trading roles where statistical rigor meets practical trading constraints. My interests span systematic equity research, fixed income modeling, and derivatives pricing.</p>
+                    <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV →</a>
+                </div>
+                <div class="skills-box">
+                    <h3>Technical Skills</h3>
+                    <div class="skill-category">
+                        <h4>Finance & Methods</h4>
+                        <p>Time-series forecasting (ARIMA/ARMA/GARCH) · Portfolio optimization · Risk management · Derivatives pricing</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Programming & Tools</h4>
+                        <p>Python · C++ · SQL · Git · Pine Script · Excel/VBA</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Libraries</h4>
+                        <p>pandas · numpy · statsmodels · scikit-learn · LightGBM · cvxpy · matplotlib</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2>Quantitative Research Projects</h2>
+            <p class="section-intro">Applied research in statistical modeling, algorithmic trading, and derivatives pricing</p>
+            
+            <div class="project-grid">
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Macro Regime Duration Model</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8/macro_regime_duration" target="_blank" class="project-link">GitHub →</a>
+                            <a href="macro-regime-model.html" class="project-link">See Details →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · statsmodels · Markov-switching · Nelson-Siegel VAR</p>
+                    <p class="project-desc">Built 3-state Markov-switching model detecting latent Recession/Growth/Expansion regimes in GDP, inflation, and unemployment. Integrated yield-curve forecast with regime-conditioned mean-variance optimizer.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">1.08</span>
+                            <span class="metric-label">Sharpe Ratio</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">-45%</span>
+                            <span class="metric-label">Max Drawdown</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">87%</span>
+                            <span class="metric-label">Regime Persistence</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Delta-Neutral Options Market-Making Simulator</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8/opt_mm_sim" target="_blank" class="project-link">GitHub →</a>
+                            <a href="options-mm-simulator.html" class="project-link">See Details →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Black-Scholes · LightGBM · cvxpy · Streamlit</p>
+                    <p class="project-desc">Minute-level NBBO-aware delta-neutral simulator with BS theoretical pricing, Greeks calculation, and put-call parity residual tracking. Features asymmetric spreads with inventory lean and delta-band hedging.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">8-15%</span>
+                            <span class="metric-label">Target Fill Rate</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">550+</span>
+                            <span class="metric-label">Fills (800-min test)</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Numerai ML Alpha Signals</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                            <a href="numerai-alpha.html" class="project-link">See Details →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · LightGBM · Purged CV · Feature Engineering</p>
+                    <p class="project-desc">Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features for market-neutral 20-day return forecasts. Deployed live in Numerai's hedge fund with automated weekly retraining.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">1.38</span>
+                            <span class="metric-label">Validation Sharpe</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">0.64</span>
+                            <span class="metric-label">Live Sharpe</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">300+</span>
+                            <span class="metric-label">Eras Tested</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Options Parity Checker</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8/OptionsParityChecker_yfinance" target="_blank" class="project-link">GitHub →</a>
+                            <a href="options-parity.html" class="project-link">See Details →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Options Pricing · Real-time Data</p>
+                    <p class="project-desc">Real-time arbitrage detection tool for put-call parity violations across options chains.</p>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Post-Earnings Drift Backtest</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8/PEAD-mini-WRDS" target="_blank" class="project-link">GitHub →</a>
+                            <a href="pead-backtest.html" class="project-link">See Details →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Event Study · Statistical Analysis</p>
+                    <p class="project-desc">Systematic analysis of post-earnings announcement drift patterns across market cap segments.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2>Professional Experience</h2>
+
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Self-employed</h3>
+                                <p class="role">Independent Algorithmic Trader & Developer</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">Sep 2024 – Present</span>
+                                <span class="location">Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Performed rigorous backtesting & walk-forward optimization on QuantConnect with slippage, commissions, and regime filters</li>
+                            <li>Developed a proprietary, fully autonomous multi-regime strategy leveraging value and momentum signals, protected by macro-driven filters</li>
+                            <li>Designing advanced predictive models using ARIMA/GARCH for next-day return forecasting across equities and forex</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Numerai</h3>
+                                <p class="role">Quantitative Researcher (Competition)</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Aug 2025</span>
+                                <span class="location">Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
+                            <li>Achieved robust validation performance (CORR ≈ 0.039, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
+                            <li>Deployed live signals to Numerai hedge fund (forward Sharpe ≈ 0.64 ongoing)</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>DEFINEX</h3>
+                                <p class="role">Prompt Engineer</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">Apr – Sep 2024</span>
+                                <span class="location">Ivrea, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Designed and tested prompts to optimize AI model outputs for financial/legal applications</li>
+                            <li>Applied structured experimentation to improve accuracy and consistency of proprietary models</li>
+                            <li>Developed transferable skills in automation and model calibration</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Euronext Securities</h3>
+                                <p class="role">Custody Intern · Income & Fiscal Services</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Nov 2023</span>
+                                <span class="location">Milan, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Reconciled 1,000+ annual income and corporate events across derivatives and ABS</li>
+                            <li>Engineered Excel/VBA automation reducing processing time from ~1 hour to under 1 minute</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>Deloitte Consulting</h3>
+                                <p class="role">Junior Analyst · Financial Services</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">May – Aug 2022</span>
+                                <span class="location">Milan, Italy</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Contributed to design of Deloitte's first secondary-market tax-credit platform</li>
+                            <li>Automated eligibility checks and transaction workflows for 5+ major institutions</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="contact">
         <div class="container">
@@ -170,7 +430,7 @@
                 </a>
                 <a href="https://calendly.com/matteo-craviotto-8tcq/new-meeting" target="_blank" class="contact-card calendly">
                     <h3>15-min Chat</h3>
-                    <p>Book a quick call</p>
+                    <p>Book a quick call →</p>
                 </a>
             </div>
         </div>
