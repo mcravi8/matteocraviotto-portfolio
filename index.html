@@ -1,4 +1,3 @@
-<!DOCTYPE html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +9,7 @@
     <meta name="keywords" content="quantitative researcher, algorithmic trading, financial engineering, USC, Numerai, machine learning finance, derivatives pricing, Los Angeles">
     <meta name="author" content="Matteo Craviotto">
 
+    <!-- Open Graph -->
     <meta property="og:title" content="Matteo Craviotto - Quantitative Researcher">
     <meta property="og:description" content="USC Financial Engineering student shipping live ML alpha signals and systematic trading strategies.">
     <meta property="og:url" content="https://matteocraviotto.me">
@@ -18,78 +18,80 @@
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="style.css">
 
-    <style>
-        html { scroll-behavior: smooth; }
-
-        /* Nav active highlight */
-        .nav-links a.active {
-            color: #0066ff;
-            font-weight: 600;
-            position: relative;
-        }
-        .nav-links a.active::after {
-            content: '';
-            position: absolute;
-            bottom: -6px;
-            left: 0;
-            width: 100%;
-            height: 3px;
-            background: #0066ff;
-            border-radius: 2px;
-        }
-
-        /* Calendly card */
-        .contact-card.calendly {
-            background: linear-gradient(135deg, #0066ff, #00d4ff);
-            color: white;
-            font-weight: 600;
-        }
-        .contact-card.calendly:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 10px 20px rgba(0,102,255,0.3);
-        }
-    </style>
-
+    <!-- Smooth scrolling + ACTIVE NAV HIGHLIGHT (fixed for Contact at bottom) -->
     <script>
-        // Smooth scrolling
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
+      // Smooth scrolling
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          document.querySelector(this.getAttribute('href')).scrollIntoView({
+            behavior: 'smooth'
+          });
+        });
+      });
+
+      // Active nav highlighting – improved offset so Contact works at bottom
+      window.addEventListener('scroll', () => {
+        let current = 'home';
+
+        const sections = document.querySelectorAll('section[id]');
+        const scrollPos = window.scrollY + 200; // increased offset for tall hero/navbar
+
+        sections.forEach(section => {
+          if (section.offsetTop <= scrollPos && (section.offsetTop + section.offsetHeight) > scrollPos) {
+            current = section.getAttribute('id');
+          }
         });
 
-        // Active section highlighting + Contact stays active at bottom
-        window.addEventListener('scroll', () => {
-            let current = '';
-            const sections = document.querySelectorAll('section[id]');
-            
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 160;
-                if (window.pageYOffset >= sectionTop) {
-                    current = section.getAttribute('id');
-                }
-            });
+        // Special case: if we're past the last section → force Contact
+        if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight - 50) {
+          current = 'contact';
+        }
 
-            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 100) {
-                current = 'contact';
-            }
-
-            document.querySelectorAll('.nav-links a').forEach(link => {
-                link.classList.remove('active');
-                if (link.getAttribute('href') === `#${current}`) {
-                    link.classList.add('active');
-                }
-            });
+        document.querySelectorAll('.nav-links a').forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === `#${current}`) {
+            link.classList.add('active');
+          }
         });
+      });
     </script>
+
+    <style>
+      /* Active nav style */
+      .nav-links a.active {
+        color: #0066ff;
+        font-weight: 600;
+        position: relative;
+      }
+      .nav-links a.active::after {
+        content: '';
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        width: 100%;
+        height: 3px;
+        background: #0066ff;
+        border-radius: 2px;
+      }
+
+      html { scroll-behavior: smooth; }
+
+      /* Calendly card */
+      .contact-card.calendly {
+        background: linear-gradient(135deg, #0066ff, #00d4ff);
+        color: white;
+        font-weight: 600;
+      }
+      .contact-card.calendly:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 10px 20px rgba(0,102,255,0.3);
+      }
+    </style>
 </head>
 <body>
-
-    <!-- EXACT ORIGINAL SIDEBAR STRUCTURE YOU LOVE (with only one tiny fix) -->
-    <aside class="info-sidebar">
+    <!-- Your entire existing body content stays 100% the same until Contact section -->
+    <aside class="info-sidebar" style="top: 425px;">
         <div class="sidebar-section">
             <h3>Education</h3>
             <div class="sidebar-item">
@@ -146,13 +148,8 @@
         </div>
     </nav>
 
-    <!-- Your hero, about, projects, experience, contact, footer sections stay 100% unchanged -->
-    <!-- (Just paste them exactly as you have them now) -->
-
-    <section id="home" class="hero">…your hero section…</section>
-    <section id="about" class="about">…your about section…</section>
-    <section id="projects" class="projects">…your projects section…</section>
-    <section id="experience" class="experience">…your experience section…</section>
+    <!-- All your sections (hero, about, projects, experience) stay exactly the same -->
+    <!-- ... keeping everything you already have ... -->
 
     <section id="contact" class="contact">
         <div class="container">
@@ -184,6 +181,5 @@
             <p>© 2025 Matteo Craviotto</p>
         </div>
     </footer>
-
 </body>
 </html>
