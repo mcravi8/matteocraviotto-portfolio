@@ -87,53 +87,66 @@
         box-shadow: 0 10px 20px rgba(0,102,255,0.3);
       }
 
-      /* --- NEW STYLES FOR LEGAL STATUS SECTION --- */
+      /* --- UPDATED STYLES FOR LEGAL STATUS SECTION --- */
       .legal-section {
-        background-color: #f8f9fa; /* Light gray background to separate it */
-        padding: 40px 0;
-        border-top: 1px solid #e1e4e8;
+        background-color: #f8f9fa; /* Light gray to separate from white sections */
+        padding: 30px 0;
         border-bottom: 1px solid #e1e4e8;
+        margin-top: -20px; /* Slight pull up closer to About */
       }
       .legal-box {
         background: white;
         border: 1px solid #e1e4e8;
         border-radius: 12px;
-        padding: 25px;
-        max-width: 800px;
+        padding: 30px;
+        max-width: 900px; /* Wider to prevent cramping */
         margin: 0 auto;
         box-shadow: 0 4px 6px rgba(0,0,0,0.02);
       }
       .legal-header {
         text-align: center;
-        margin-bottom: 20px;
+        margin-bottom: 25px;
         color: #333;
-        font-size: 1.2rem;
+        font-size: 1.3rem;
         font-weight: 700;
       }
       .legal-grid {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        display: flex;
+        flex-direction: column; /* Stack on mobile */
         gap: 20px;
         text-align: center;
       }
+      .legal-item {
+        flex: 1;
+        padding: 0 10px;
+      }
       .legal-item h4 {
-        margin: 0 0 5px 0;
+        margin: 0 0 8px 0;
         color: #0066ff;
-        font-size: 1rem;
+        font-size: 1.1rem;
+        font-weight: 700;
       }
       .legal-item p {
         margin: 0;
-        font-size: 0.9rem;
+        font-size: 0.95rem;
         color: #555;
         line-height: 1.4;
       }
-      .legal-divider {
-        width: 1px;
-        background: #e1e4e8;
-        display: none; /* Hidden on mobile */
-      }
+      
+      /* Desktop Layout: Horizontal row with borders */
       @media (min-width: 768px) {
-        .legal-divider { display: block; }
+        .legal-grid {
+          flex-direction: row;
+          align-items: flex-start; /* Align tops */
+          gap: 0; /* Remove gap, use padding for borders */
+        }
+        .legal-item {
+          border-right: 1px solid #e1e4e8;
+          padding: 0 20px;
+        }
+        .legal-item:last-child {
+          border-right: none;
+        }
       }
     </style>
 </head>
@@ -233,6 +246,30 @@
                     <div class="skill-category">
                         <h4>Libraries</h4>
                         <p>pandas · numpy · statsmodels · scikit-learn · LightGBM · cvxpy · matplotlib</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="legal" class="legal-section">
+        <div class="container">
+            <div class="legal-box">
+                <h3 class="legal-header">Legal Status & Work Authorization</h3>
+                <div class="legal-grid">
+                    <div class="legal-item">
+                        <h4>F-1 Visa Holder</h4>
+                        <p>STEM-designated Master’s degree</p>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <h4>36 Months OPT</h4>
+                        <p>Eligible beginning <strong>January 2027</strong></p>
+                    </div>
+                    
+                    <div class="legal-item">
+                        <h4>No Sponsorship Needed</h4>
+                        <p>Required until early <strong>2030</strong></p>
                     </div>
                 </div>
             </div>
@@ -451,34 +488,6 @@
                             <li>Contributed to design of Deloitte's first secondary-market tax-credit platform</li>
                             <li>Automated eligibility checks and transaction workflows for 5+ major institutions</li>
                         </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="legal" class="legal-section">
-        <div class="container">
-            <div class="legal-box">
-                <h3 class="legal-header">Legal Status & Work Authorization</h3>
-                <div class="legal-grid">
-                    <div class="legal-item">
-                        <h4>F-1 Visa Holder</h4>
-                        <p>STEM-designated Master’s degree</p>
-                    </div>
-                    
-                    <div class="legal-divider"></div>
-                    
-                    <div class="legal-item">
-                        <h4>36 Months OPT</h4>
-                        <p>Eligible beginning <strong>January 2027</strong></p>
-                    </div>
-                    
-                    <div class="legal-divider"></div>
-                    
-                    <div class="legal-item">
-                        <h4>No Sponsorship Needed</h4>
-                        <p>Required until early <strong>2030</strong></p>
                     </div>
                 </div>
             </div>
