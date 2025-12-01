@@ -35,6 +35,7 @@
         let current = '';
         const sections = document.querySelectorAll('section[id]');
         
+        // Standard section detection based on viewport position
         sections.forEach(section => {
           const sectionTop = section.offsetTop - 100; // offset for fixed nav
           const sectionHeight = section.clientHeight;
@@ -42,6 +43,12 @@
             current = section.getAttribute('id');
           }
         });
+
+        // Force 'contact' to be active if user is at the bottom of the page
+        // This handles cases where the last section is short
+        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 5) { // 5px buffer
+            current = 'contact';
+        }
 
         document.querySelectorAll('.nav-links a').forEach(link => {
           link.classList.remove('active');
