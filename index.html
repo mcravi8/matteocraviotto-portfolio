@@ -35,16 +35,14 @@
         let current = '';
         const sections = document.querySelectorAll('section[id]');
         
-        // Standard section detection based on viewport position
         sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100; // offset for fixed nav
+          const sectionTop = section.offsetTop - 100;
           const sectionHeight = section.clientHeight;
           if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
             current = section.getAttribute('id');
           }
         });
 
-        // Force 'contact' to be active if user is at the bottom of the page
         if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 5) {
             current = 'contact';
         }
@@ -59,7 +57,6 @@
     </script>
 
     <style>
-      /* Active nav link style – customize colors to match your theme */
       .nav-links a.active {
         color: #0066ff;
         font-weight: 600;
@@ -76,12 +73,10 @@
         border-radius: 2px;
       }
 
-      /* Make smooth scrolling work on the whole page */
       html {
         scroll-behavior: smooth;
       }
 
-      /* Calendly contact card styles */
       .contact-card.calendly {
         background: linear-gradient(135deg, #0066ff, #00d4ff);
         color: white;
@@ -93,19 +88,18 @@
         box-shadow: 0 10px 20px rgba(0,102,255,0.3);
       }
 
-      /* --- UPDATED STYLES FOR LEGAL STATUS SECTION --- */
       .legal-section {
-        background-color: #f8f9fa; /* Light gray to separate from white sections */
+        background-color: #f8f9fa;
         padding: 30px 0;
         border-bottom: 1px solid #e1e4e8;
-        margin-top: -20px; /* Slight pull up closer to About */
+        margin-top: -20px;
       }
       .legal-box {
         background: white;
         border: 1px solid #e1e4e8;
         border-radius: 12px;
         padding: 30px;
-        max-width: 900px; /* Wider to prevent cramping */
+        max-width: 900px;
         margin: 0 auto;
         box-shadow: 0 4px 6px rgba(0,0,0,0.02);
       }
@@ -118,7 +112,7 @@
       }
       .legal-grid {
         display: flex;
-        flex-direction: column; /* Stack on mobile */
+        flex-direction: column;
         gap: 20px;
         text-align: center;
       }
@@ -139,12 +133,11 @@
         line-height: 1.4;
       }
       
-      /* Desktop Layout: Horizontal row with borders */
       @media (min-width: 768px) {
         .legal-grid {
           flex-direction: row;
-          align-items: flex-start; /* Align tops */
-          gap: 0; /* Remove gap, use padding for borders */
+          align-items: flex-start;
+          gap: 0;
         }
         .legal-item {
           border-right: 1px solid #e1e4e8;
@@ -217,7 +210,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Matteo Craviotto</h1>
-            <p class="hero-subtitle">I am passionate about leveraging technology and quantitative methods to drive innovation through investment solutions.</p>
+            <p class="hero-subtitle">Financial Engineering · Machine Learning · Systematic Trading · AI-Augmented Development</p>
             <div class="hero-links">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 <a href="#contact" class="btn-secondary">Get in Touch</a>
@@ -225,7 +218,7 @@
             <div class="hero-meta">
                 <span>Los Angeles, CA</span>
                 <span>·</span>
-                <span>MS Financial Engineering @ USC</span>
+                <span>MS Financial Engineering @ USC · GPA 3.93</span>
             </div>
         </div>
     </section>
@@ -235,8 +228,8 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Driven by curiosity about market behavior, I'm a Financial Engineering student at USC focused on applying data analysis to financial markets. The race to find alpha excites me—discovering patterns in regime shifts, volatility surfaces, or cross-sectional equity signals that translate to real trading strategies.</p>
-                    <p>I'm drawn to the challenge of building models that work not just in backtest but in live markets with transaction costs and changing regimes. I see myself in quantitative research / trading roles where statistical rigor meets practical trading constraints. My interests span systematic equity research, fixed income modeling, and derivatives pricing.</p>
+                    <p>Financial Engineering student at USC building systematic strategies that survive live markets — not just backtests. Currently deploying ML alpha signals on Numerai's hedge fund and developing multi-regime trading systems on QuantConnect with realistic transaction costs, slippage, and regime filters.</p>
+                    <p>Focused on systematic equity research, derivatives pricing, and fixed income modeling.</p>
                     <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV →</a>
                 </div>
                 <div class="skills-box">
@@ -253,6 +246,10 @@
                         <h4>Libraries</h4>
                         <p>pandas · numpy · statsmodels · scikit-learn · LightGBM · cvxpy · matplotlib</p>
                     </div>
+                    <div class="skill-category">
+                        <h4>AI-Augmented Workflow</h4>
+                        <p>Claude Code & Cowork · Cursor · Microsoft Copilot · OpenClaw · Prompt engineering for research automation</p>
+                    </div>
                 </div>
             </div>
         </div>
@@ -265,7 +262,7 @@
                 <div class="legal-grid">
                     <div class="legal-item">
                         <h4>F-1 Visa Holder</h4>
-                        <p>STEM-designated Master’s degree</p>
+                        <p>STEM-designated Master's degree</p>
                     </div>
                     
                     <div class="legal-item">
@@ -527,7 +524,7 @@
 
     <footer>
         <div class="container">
-            <p>© 2025 Matteo Craviotto</p>
+            <p>© 2026 Matteo Craviotto</p>
         </div>
     </footer>
 </body>
