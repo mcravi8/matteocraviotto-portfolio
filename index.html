@@ -191,6 +191,34 @@
         }
       }
     </style>
+    .container {
+          margin-left: auto !important;
+          margin-right: auto !important;
+      }
+
+      .hero-content,
+      .about h2,
+      .experience h2,
+      .projects h2,
+      .contact h2,
+      footer .container,
+      .section-intro {
+          text-align: center;
+      }
+
+      .info-sidebar {
+          position: fixed !important;
+          left: 20px !important;
+      }
+
+      body > section > .container,
+      body > footer > .container {
+          max-width: 1100px;
+          margin-left: auto !important;
+          margin-right: auto !important;
+          padding-left: 20px;
+          padding-right: 20px;
+      }
 </head>
 <body>
     <aside class="info-sidebar" style="top: 410px;">
@@ -350,7 +378,6 @@
                         <ul>
                             <li>Built an autonomous multi-LLM research and execution system orchestrating five AI APIs (Anthropic, OpenAI, xAI, Google, Perplexity) across 50+ US equities — integrated real-time market data, regime signals, and model-consensus logic into a Dockerized Python pipeline with PostgreSQL and automated Alpaca execution</li>
                             <li>Shipped a prediction-market trading platform on Kalshi with real-time scanners, empirically-calibrated edge model (72M+ trades), and layered risk engine — deployed on Azure with automated REST execution</li>
-                            <li>Built Citala, an AI visibility auditing platform (USC Greif Incubator) — full-stack TypeScript/React, Python/FastAPI backend, LLM-driven scoring pipeline with statistical confidence intervals</li>
                         </ul>
                     </div>
                 </div>
@@ -466,27 +493,6 @@
                         <div class="metric">
                             <span class="metric-value">Live</span>
                             <span class="metric-label">Alpaca Execution</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Citala — AI Visibility Auditing Platform</h3>
-                        <div class="project-links">
-                            <a href="https://citala.com" target="_blank" class="project-link">Site →</a>
-                        </div>
-                    </div>
-                    <p class="project-tech">TypeScript · React · Python · FastAPI · LLM APIs · Statistical Analysis</p>
-                    <p class="project-desc">Full-stack platform measuring how LLMs recommend businesses. Produces a 0–100 composite Visibility Score with statistical confidence intervals and factor decomposition. USC Greif Incubator.</p>
-                    <div class="project-results">
-                        <div class="metric">
-                            <span class="metric-value">0–100</span>
-                            <span class="metric-label">Visibility Score</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-value">Full-stack</span>
-                            <span class="metric-label">TS + Python</span>
                         </div>
                     </div>
                 </div>
