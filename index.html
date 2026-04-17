@@ -5,259 +5,714 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
     <title>Matteo Craviotto - AI Engineer & Quant Developer</title>
-    <meta name="description" content="AI engineer and quant developer building LLM-powered research tools and systematic trading systems. USC MS Financial Engineering '26. Multi-LLM trading agents, prediction markets, live ML alpha.">
-    
+    <meta name="description" content="AI engineer and quant developer building LLM-powered research tools and systematic trading systems. USC MS Financial Engineering '26.">
     <meta name="keywords" content="AI engineer, LLM agents, investment workflows, quant developer, algorithmic trading, financial engineering, USC, Los Angeles">
     <meta name="author" content="Matteo Craviotto">
-
     <meta property="og:title" content="Matteo Craviotto - AI Engineer & Quant Developer">
     <meta property="og:description" content="Building AI agents and internal tools for investment workflows. USC MS Financial Engineering.">
     <meta property="og:url" content="https://matteocraviotto.me">
     <meta property="og:type" content="website">
-
     <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" href="style.css">
-
-    <script>
-      // Smooth scrolling for all anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-          });
-        });
-      });
-
-      // Add active class to nav links on scroll
-      window.addEventListener('scroll', () => {
-        let current = '';
-        const sections = document.querySelectorAll('section[id]');
-        
-        sections.forEach(section => {
-          const sectionTop = section.offsetTop - 100;
-          const sectionHeight = section.clientHeight;
-          if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-            current = section.getAttribute('id');
-          }
-        });
-
-        if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 5) {
-            current = 'contact';
-        }
-
-        document.querySelectorAll('.nav-links a').forEach(link => {
-          link.classList.remove('active');
-          if (link.getAttribute('href') === `#${current}`) {
-            link.classList.add('active');
-          }
-        });
-      });
-    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
     <style>
-      .nav-links a.active {
-        color: #0066ff;
-        font-weight: 600;
-        position: relative;
-      }
-      .nav-links a.active::after {
-        content: '';
-        position: absolute;
-        bottom: -6px;
-        left: 0;
-        width: 100%;
-        height: 3px;
-        background: #0066ff;
-        border-radius: 2px;
-      }
-
-      html {
-        scroll-behavior: smooth;
-      }
-
-      /* Compact sidebar spacing */
-      .sidebar-item {
-        margin-bottom: 8px !important;
-      }
-      .sidebar-item h4 {
-        margin-bottom: 0 !important;
-        font-size: 0.9rem !important;
-      }
-      .sidebar-item .sidebar-role,
-      .sidebar-item .sidebar-meta {
-        margin: 0 !important;
-        line-height: 1.3 !important;
-      }
-      .sidebar-section {
-        margin-bottom: 15px !important;
-      }
-
-      .hero-legal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        margin-top: 10px;
-        font-size: 0.9rem;
-        color: #0066ff;
-      }
-
-      /* Tighten sidebar spacing */
-      .sidebar-item {
-        margin-bottom: 10px !important;
-      }
-      .sidebar-item h4 {
-        margin-bottom: 1px !important;
-      }
-      .sidebar-item .sidebar-role,
-      .sidebar-item .sidebar-meta {
-        margin: 0 !important;
-        line-height: 1.3 !important;
-      }
-      .sidebar-section {
-        margin-bottom: 15px !important;
-      }
-
-      .contact-card.calendly {
-        background: linear-gradient(135deg, #0066ff, #00d4ff);
-        color: white;
-        border: none;
-        font-weight: 600;
-      }
-      .contact-card.calendly:hover {
-        transform: translateY(-4px);
-        box-shadow: 0 10px 20px rgba(0,102,255,0.3);
-      }
-
-      .legal-section {
-        background-color: #f8f9fa;
-        padding: 30px 0;
-        border-bottom: 1px solid #e1e4e8;
-        margin-top: -20px;
-      }
-      .legal-box {
-        background: white;
-        border: 1px solid #e1e4e8;
-        border-radius: 12px;
-        padding: 30px;
-        max-width: 900px;
-        margin: 0 auto;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      }
-      .legal-header {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #333;
-        font-size: 1.3rem;
-        font-weight: 700;
-      }
-      .legal-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-      .legal-item {
-        flex: 1;
-        padding: 0 10px;
-      }
-      .legal-item h4 {
-        margin: 0 0 8px 0;
-        color: #0066ff;
-        font-size: 1.1rem;
-        font-weight: 700;
-      }
-      .legal-item p {
-        margin: 0;
-        font-size: 0.95rem;
-        color: #555;
-        line-height: 1.4;
-      }
-      
-      @media (min-width: 768px) {
-        .legal-grid {
-          flex-direction: row;
-          align-items: flex-start;
-          gap: 0;
+        :root {
+            --bg-primary: #0a0a0f;
+            --bg-secondary: #0f0f16;
+            --bg-card: #12121a;
+            --bg-card-hover: #181822;
+            --border: #1e1e2e;
+            --border-accent: #2a2a3a;
+            --text-primary: #e0e0e8;
+            --text-secondary: #8888a0;
+            --text-dim: #55556a;
+            --accent: #00d4aa;
+            --accent-dim: rgba(0, 212, 170, 0.15);
+            --accent-glow: rgba(0, 212, 170, 0.08);
+            --red: #ff4d4d;
+            --amber: #ffaa00;
+            --blue: #4d94ff;
+            --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+            --font-sans: 'DM Sans', -apple-system, sans-serif;
         }
-        .legal-item {
-          border-right: 1px solid #e1e4e8;
-          padding: 0 20px;
-        }
-        .legal-item:last-child {
-          border-right: none;
-        }
-      }
 
-      /* Fix: center only section titles and intros to the full viewport */
-      .about h2,
-      .experience h2,
-      .projects h2,
-      .contact h2,
-      .section-intro,
-      footer .container p {
-        position: relative !important;
-        left: calc(-120px) !important;
-        text-align: center !important;
-      }
+        *, *::before, *::after {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            scrollbar-width: thin;
+            scrollbar-color: var(--border-accent) var(--bg-primary);
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background: var(--bg-primary);
+            color: var(--text-primary);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        ::selection {
+            background: var(--accent);
+            color: var(--bg-primary);
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* GRID OVERLAY */
+        /* ═══════════════════════════════════════ */
+        .grid-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+            opacity: 0.04;
+            background-image: 
+                linear-gradient(var(--accent) 1px, transparent 1px),
+                linear-gradient(90deg, var(--accent) 1px, transparent 1px);
+            background-size: 60px 60px;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* NAV */
+        /* ═══════════════════════════════════════ */
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 100;
+            background: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 56px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .nav-logo {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .nav-logo span {
+            color: var(--text-dim);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 32px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-secondary);
+            text-decoration: none;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+            position: relative;
+        }
+
+        .nav-links a:hover,
+        .nav-links a.active {
+            color: var(--accent);
+        }
+
+        .nav-links a.active::after {
+            content: '';
+            position: absolute;
+            bottom: -18px;
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* HERO */
+        /* ═══════════════════════════════════════ */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            padding: 56px 40px 0;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            width: 100%;
+        }
+
+        .hero-status {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 24px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease forwards;
+        }
+
+        .status-dot {
+            width: 6px;
+            height: 6px;
+            background: var(--accent);
+            border-radius: 50%;
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; box-shadow: 0 0 0 0 var(--accent); }
+            50% { opacity: 0.6; box-shadow: 0 0 12px 2px var(--accent); }
+        }
+
+        .hero h1 {
+            font-family: var(--font-sans);
+            font-size: clamp(2.8rem, 6vw, 4.5rem);
+            font-weight: 700;
+            line-height: 1.05;
+            margin-bottom: 24px;
+            letter-spacing: -1px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.1s forwards;
+        }
+
+        .hero-subtitle {
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.8;
+            max-width: 640px;
+            margin-bottom: 40px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.2s forwards;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 48px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.3s forwards;
+        }
+
+        .tag {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            padding: 6px 14px;
+            border: 1px solid var(--border);
+            color: var(--text-secondary);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: all 0.2s;
+        }
+
+        .tag:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            background: var(--accent-dim);
+        }
+
+        .hero-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 24px;
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+            opacity: 0;
+            animation: fadeInUp 0.6s ease 0.4s forwards;
+        }
+
+        .hero-meta .accent-text {
+            color: var(--accent);
+        }
+
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(16px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* SECTIONS */
+        /* ═══════════════════════════════════════ */
+        section {
+            position: relative;
+            z-index: 1;
+        }
+
+        .section-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 40px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 56px;
+        }
+
+        .section-header h2 {
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--accent);
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+
+        .section-line {
+            flex: 1;
+            height: 1px;
+            background: var(--border);
+        }
+
+        .section-num {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* ABOUT */
+        /* ═══════════════════════════════════════ */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+        }
+
+        .about-text p {
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            margin-bottom: 20px;
+            line-height: 1.75;
+        }
+
+        .cv-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-family: var(--font-mono);
+            font-size: 0.75rem;
+            color: var(--accent);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            padding: 10px 0;
+            border-bottom: 1px solid var(--accent);
+            transition: all 0.2s;
+            margin-top: 8px;
+        }
+
+        .cv-link:hover {
+            padding-bottom: 4px;
+        }
+
+        .cv-link::after {
+            content: '→';
+            transition: transform 0.2s;
+        }
+
+        .cv-link:hover::after {
+            transform: translateX(4px);
+        }
+
+        .skills-grid {
+            display: flex;
+            flex-direction: column;
+            gap: 28px;
+        }
+
+        .skill-block {
+            border-left: 2px solid var(--border);
+            padding-left: 20px;
+            transition: border-color 0.2s;
+        }
+
+        .skill-block:hover {
+            border-left-color: var(--accent);
+        }
+
+        .skill-block h4 {
+            font-family: var(--font-mono);
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+            margin-bottom: 8px;
+        }
+
+        .skill-block p {
+            font-size: 0.85rem;
+            color: var(--text-dim);
+            line-height: 1.7;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* EXPERIENCE */
+        /* ═══════════════════════════════════════ */
+        .experience-section {
+            border-top: 1px solid var(--border);
+        }
+
+        .exp-item {
+            border-bottom: 1px solid var(--border);
+            padding: 40px 0;
+            display: grid;
+            grid-template-columns: 240px 1fr;
+            gap: 40px;
+            transition: background 0.3s;
+        }
+
+        .exp-item:hover {
+            background: var(--accent-glow);
+            margin: 0 -40px;
+            padding: 40px;
+        }
+
+        .exp-meta {
+            font-family: var(--font-mono);
+        }
+
+        .exp-company {
+            font-size: 0.8rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 4px;
+        }
+
+        .exp-role {
+            font-size: 0.7rem;
+            color: var(--accent);
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .exp-date {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .exp-location {
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            margin-top: 2px;
+        }
+
+        .exp-details ul {
+            list-style: none;
+        }
+
+        .exp-details li {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            padding-left: 16px;
+            position: relative;
+            margin-bottom: 10px;
+        }
+
+        .exp-details li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--accent);
+            font-size: 0.75rem;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* PROJECTS */
+        /* ═══════════════════════════════════════ */
+        .projects-section {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .project-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+
+        .project-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 32px;
+            transition: all 0.3s;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .project-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: transparent;
+            transition: background 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--border-accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .project-card:hover::before {
+            background: var(--accent);
+        }
+
+        .project-card h3 {
+            font-family: var(--font-sans);
+            font-size: 1rem;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+
+        .project-tech {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+            margin-bottom: 16px;
+        }
+
+        .project-desc {
+            font-size: 0.85rem;
+            color: var(--text-secondary);
+            line-height: 1.7;
+            margin-bottom: 24px;
+        }
+
+        .project-metrics {
+            display: flex;
+            gap: 24px;
+            padding-top: 16px;
+            border-top: 1px solid var(--border);
+        }
+
+        .metric {
+            text-align: center;
+        }
+
+        .metric-val {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 700;
+            color: var(--accent);
+            display: block;
+        }
+
+        .metric-label {
+            font-family: var(--font-mono);
+            font-size: 0.55rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            margin-top: 2px;
+            display: block;
+        }
+
+        .project-links {
+            display: flex;
+            gap: 16px;
+            margin-top: 16px;
+        }
+
+        .project-link {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            text-decoration: none;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            transition: color 0.2s;
+        }
+
+        .project-link:hover {
+            color: var(--accent);
+        }
+
+        .project-card.featured {
+            grid-column: span 2;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+        }
+
+        .project-card.featured .project-metrics {
+            border-top: none;
+            padding-top: 0;
+            flex-direction: column;
+            justify-content: center;
+            gap: 16px;
+        }
+
+        .project-card.featured .metric {
+            text-align: left;
+            display: flex;
+            align-items: baseline;
+            gap: 12px;
+        }
+
+        .project-card.featured .metric-val {
+            font-size: 1.4rem;
+            min-width: 60px;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* CONTACT */
+        /* ═══════════════════════════════════════ */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 16px;
+        }
+
+        .contact-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            padding: 28px;
+            text-decoration: none;
+            transition: all 0.3s;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .contact-card:hover {
+            border-color: var(--accent);
+            background: var(--bg-card-hover);
+            transform: translateY(-2px);
+        }
+
+        .contact-label {
+            font-family: var(--font-mono);
+            font-size: 0.6rem;
+            color: var(--text-dim);
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        .contact-value {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: var(--text-primary);
+        }
+
+        .contact-card:hover .contact-value {
+            color: var(--accent);
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* FOOTER */
+        /* ═══════════════════════════════════════ */
+        footer {
+            border-top: 1px solid var(--border);
+            padding: 32px 40px;
+            text-align: center;
+        }
+
+        footer p {
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            letter-spacing: 1px;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* LEGAL BAR */
+        /* ═══════════════════════════════════════ */
+        .legal-bar {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            padding: 14px 40px;
+            border-bottom: 1px solid var(--border);
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            color: var(--text-dim);
+            letter-spacing: 0.5px;
+            background: var(--bg-secondary);
+        }
+
+        .legal-bar .accent-text {
+            color: var(--accent);
+            font-weight: 600;
+        }
+
+        /* ═══════════════════════════════════════ */
+        /* RESPONSIVE */
+        /* ═══════════════════════════════════════ */
+        @media (max-width: 900px) {
+            .about-grid { grid-template-columns: 1fr; gap: 40px; }
+            .project-grid { grid-template-columns: 1fr; }
+            .project-card.featured { grid-column: span 1; grid-template-columns: 1fr; }
+            .project-card.featured .project-metrics { flex-direction: row; border-top: 1px solid var(--border); padding-top: 16px; }
+            .project-card.featured .metric { text-align: center; flex-direction: column; gap: 2px; }
+            .project-card.featured .metric-val { font-size: 1.1rem; min-width: auto; }
+            .contact-grid { grid-template-columns: repeat(2, 1fr); }
+            .exp-item { grid-template-columns: 1fr; gap: 16px; }
+            .exp-item:hover { margin: 0 -20px; padding: 40px 20px; }
+            .nav-inner { padding: 0 20px; }
+            .section-container { padding: 60px 20px; }
+        }
+
+        @media (max-width: 600px) {
+            .contact-grid { grid-template-columns: 1fr; }
+            .hero-tags { gap: 6px; }
+            .hero-meta { flex-direction: column; gap: 8px; }
+            .nav-links { gap: 16px; }
+            .nav-links a { font-size: 0.6rem; }
+        }
     </style>
 </head>
 <body>
-    <aside class="info-sidebar" style="top: 410px;">
-        <div class="sidebar-section">
-            <h3>Education</h3>
-            <div class="sidebar-item">
-                <h4>USC</h4>
-                <p class="sidebar-role">MS Financial Eng.</p>
-                <p class="sidebar-meta">Dec 2026</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>ESCP</h4>
-                <p class="sidebar-role">BS Finance</p>
-                <p class="sidebar-meta">2024</p>
-            </div>
-        </div>
-        
-        <div class="sidebar-section">
-            <h3>Experience</h3>
-            <div class="sidebar-item">
-                <h4>USC Marshall</h4>
-                <p class="sidebar-role">Teaching Assistant</p>
-                <p class="sidebar-meta">Jan 2025 – Present</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>Self-employed</h4>
-                <p class="sidebar-role">AI Engineer & Algo Trader</p>
-                <p class="sidebar-meta">Sep 2025 – Present</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>Numerai</h4>
-                <p class="sidebar-role">Quant Researcher</p>
-                <p class="sidebar-meta">May – Aug 2025</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>DEFINEX</h4>
-                <p class="sidebar-role">Prompt Engineer</p>
-                <p class="sidebar-meta">Apr – Sep 2024</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>Euronext</h4>
-                <p class="sidebar-role">Custody Intern</p>
-                <p class="sidebar-meta">May – Nov 2023</p>
-            </div>
-            <div class="sidebar-item">
-                <h4>Deloitte</h4>
-                <p class="sidebar-role">Junior Analyst</p>
-                <p class="sidebar-meta">May – Aug 2022</p>
-            </div>
-        </div>
-    </aside>
+    <div class="grid-overlay"></div>
 
     <nav>
-        <div class="nav-container">
-            <a href="#home" class="logo">MC</a>
+        <div class="nav-inner">
+            <a href="#home" class="nav-logo">MC<span>_</span></a>
             <div class="nav-links">
                 <a href="#about">About</a>
                 <a href="#experience">Experience</a>
@@ -267,52 +722,70 @@
         </div>
     </nav>
 
+    <!-- ═══════════════ HERO ═══════════════ -->
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>Matteo Craviotto</h1>
-            <p class="hero-subtitle">AI Agents for Investment Workflows · Multi-LLM Systems · Systematic Trading · Financial Engineering</p>
-            <div class="hero-links">
-                <a href="#projects" class="btn-primary">View Projects</a>
-                <a href="#contact" class="btn-secondary">Get in Touch</a>
+            <div class="hero-status">
+                <span class="status-dot"></span>
+                Available for Summer 2026 internships
+            </div>
+            <h1>Matteo<br>Craviotto</h1>
+            <p class="hero-subtitle">AI agents for investment workflows. Multi-LLM systems. Systematic trading. Building tools that sit between investors and their data.</p>
+            <div class="hero-tags">
+                <span class="tag">LLM Orchestration</span>
+                <span class="tag">Python</span>
+                <span class="tag">TypeScript</span>
+                <span class="tag">Docker</span>
+                <span class="tag">PostgreSQL</span>
+                <span class="tag">FastAPI</span>
+                <span class="tag">Azure</span>
+                <span class="tag">Equity Valuation</span>
             </div>
             <div class="hero-meta">
                 <span>Los Angeles, CA</span>
-                <span>·</span>
-                <span>MS Financial Engineering @ USC · GPA 3.93</span>
-            </div>
-            <div class="hero-legal">
-                <span><strong>F-1 Visa</strong> · STEM OPT eligible — 3 years of work authorization from Dec 2026</span>
-                <span>·</span>
-                <span><strong>No employer petition required</strong></span>
+                <span>MS Financial Engineering @ USC · <span class="accent-text">3.93 GPA</span></span>
+                <span class="accent-text">F-1 STEM OPT · 3yr auth · No petition required</span>
             </div>
         </div>
     </section>
 
-    <section id="about" class="about">
-        <div class="container">
-            <h2>About Me</h2>
-            <div class="about-content">
+    <!-- ═══════════════ LEGAL ═══════════════ -->
+    <div class="legal-bar">
+        <span><span class="accent-text">F-1 Visa</span> · STEM OPT eligible — 3 years of work authorization from Dec 2026</span>
+        <span>·</span>
+        <span><span class="accent-text">No employer petition required</span></span>
+    </div>
+
+    <!-- ═══════════════ ABOUT ═══════════════ -->
+    <section id="about">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>About</h2>
+                <div class="section-line"></div>
+                <span class="section-num">01</span>
+            </div>
+            <div class="about-grid">
                 <div class="about-text">
-                    <p>MS Financial Engineering student at USC building AI agents and internal tooling for investment workflows — LLM-orchestrated research systems, multi-model trading pipelines, and automation tools that sit between investors and their data. Currently running a production multi-LLM trading system across 50+ US equities and a prediction-market platform on Kalshi.</p>
+                    <p>MS Financial Engineering student at USC building AI agents and internal tooling for investment workflows — LLM-orchestrated research systems, multi-model trading pipelines, and automation tools that sit between investors and their data.</p>
+                    <p>Currently running a production multi-LLM trading system across 50+ US equities and a prediction-market platform on Kalshi.</p>
                     <p>Focused on where AI agents meet capital markets: investment research automation, systematic strategies, and tools that compress the distance between a thesis and a trade.</p>
-                    <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV →</a>
+                    <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-link" target="_blank">Download CV</a>
                 </div>
-                <div class="skills-box">
-                    <h3>Technical Skills</h3>
-                    <div class="skill-category">
+                <div class="skills-grid">
+                    <div class="skill-block">
                         <h4>AI & LLM Engineering</h4>
                         <p>OpenAI · Anthropic · xAI · Google Gemini APIs · Agentic workflows · Multi-model orchestration · Prompt engineering · RAG · Browser automation</p>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-block">
                         <h4>Languages & Tools</h4>
                         <p>Python · TypeScript/JavaScript · React · SQL (PostgreSQL) · Bash/Linux · Git · LaTeX</p>
                     </div>
-                    <div class="skill-category">
+                    <div class="skill-block">
                         <h4>Infrastructure</h4>
                         <p>Docker · Azure · FastAPI · REST APIs · Production deployment · cron automation</p>
                     </div>
-                    <div class="skill-category">
-                        <h4>Finance & Methods</h4>
+                    <div class="skill-block">
+                        <h4>Finance</h4>
                         <p>Equity valuation (DCF/multiples/LBO) · Derivatives pricing · Time-series (ARIMA/GARCH) · Portfolio optimization · Risk management</p>
                     </div>
                 </div>
@@ -320,295 +793,286 @@
         </div>
     </section>
 
-    <section id="experience" class="experience">
-        <div class="container">
-            <h2>Professional Experience</h2>
+    <!-- ═══════════════ EXPERIENCE ═══════════════ -->
+    <section id="experience" class="experience-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Experience</h2>
+                <div class="section-line"></div>
+                <span class="section-num">02</span>
+            </div>
 
-            <div class="timeline">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>USC Marshall School of Business</h3>
-                                <p class="role">Graduate Teaching Assistant · FBE-529 Financial Analysis and Valuation</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">Jan 2025 – Present</span>
-                                <span class="location">Los Angeles, CA</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Teach equity valuation (DCF, multiples, LBO) to 30+ MBA students — building fluency in the fundamental frameworks used daily by L/S equity analysts</li>
-                        </ul>
-                    </div>
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">USC Marshall School of Business</div>
+                    <div class="exp-role">Graduate Teaching Assistant</div>
+                    <div class="exp-date">Jan 2025 – Present</div>
+                    <div class="exp-location">Los Angeles, CA</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Self-employed</h3>
-                                <p class="role">Independent AI Engineer & Algorithmic Trader</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">Sep 2025 – Present</span>
-                                <span class="location">Los Angeles, CA</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Built an autonomous multi-LLM research and execution system orchestrating five AI APIs (Anthropic, OpenAI, xAI, Google, Perplexity) across 50+ US equities — integrated real-time market data, regime signals, and model-consensus logic into a Dockerized Python pipeline with PostgreSQL and automated Alpaca execution</li>
-                            <li>Shipped a prediction-market trading platform on Kalshi with real-time scanners, empirically-calibrated edge model (72M+ trades), and layered risk engine — deployed on Azure with automated REST execution</li>
-                        </ul>
-                    </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Teach equity valuation (DCF, multiples, LBO) to 30+ MBA students — building fluency in the fundamental frameworks used daily by L/S equity analysts</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Numerai</h3>
-                                <p class="role">Quantitative Researcher (Competition)</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">May – Aug 2025</span>
-                                <span class="location">Los Angeles, CA</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
-                            <li>Achieved robust validation performance (CORR ≈ 0.039, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
-                            <li>Deployed live signals to Numerai hedge fund (forward Sharpe ≈ 0.64 ongoing)</li>
-                        </ul>
-                    </div>
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">Self-employed</div>
+                    <div class="exp-role">AI Engineer & Algorithmic Trader</div>
+                    <div class="exp-date">Sep 2025 – Present</div>
+                    <div class="exp-location">Los Angeles, CA</div>
                 </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>DEFINEX</h3>
-                                <p class="role">Prompt Engineer</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">Apr – Sep 2024</span>
-                                <span class="location">Milan, Italy</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Built LLM-based document extraction pipelines for financial services clients in Python — chain-of-thought prompt design, 50+ structured A/B variations</li>
-                            <li>Integrated OpenAI APIs into production workflows, lifting loan-parsing accuracy from ~70% to 90%+ and eliminating manual review for credit risk teams</li>
-                        </ul>
-                    </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Built an autonomous multi-LLM research and execution system orchestrating five AI APIs (Anthropic, OpenAI, xAI, Google, Perplexity) across 50+ US equities — integrated real-time market data, regime signals, and model-consensus logic into a Dockerized Python pipeline with PostgreSQL and automated Alpaca execution</li>
+                        <li>Shipped a prediction-market trading platform on Kalshi with real-time scanners, empirically-calibrated edge model (72M+ trades), and layered risk engine — deployed on Azure with automated REST execution</li>
+                    </ul>
                 </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Euronext Securities</h3>
-                                <p class="role">Custody Intern · Income & Fiscal Services</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">May – Nov 2023</span>
-                                <span class="location">Milan, Italy</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Automated reconciliation of 1,000+ annual corporate events with a custom internal tool, cutting processing time from ~1 hour to under 1 minute</li>
-                            <li>Eliminated a recurring operational bottleneck for the fiscal services desk across derivatives and ABS</li>
-                        </ul>
-                    </div>
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">Numerai</div>
+                    <div class="exp-role">Quantitative Researcher</div>
+                    <div class="exp-date">May – Aug 2025</div>
+                    <div class="exp-location">Los Angeles, CA</div>
                 </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
+                        <li>Achieved robust validation performance (CORR ≈ 0.039, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
+                        <li>Deployed live signals to Numerai hedge fund (forward Sharpe ≈ 0.64 ongoing)</li>
+                    </ul>
+                </div>
+            </div>
 
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Deloitte Consulting</h3>
-                                <p class="role">Junior Analyst · Financial Services</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">May – Aug 2022</span>
-                                <span class="location">Milan, Italy</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Designed a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications</li>
-                            <li>Automated eligibility checks and transaction workflows enabling €10B+ in transactions</li>
-                        </ul>
-                    </div>
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">DefineX</div>
+                    <div class="exp-role">Prompt Engineer</div>
+                    <div class="exp-date">Apr – Sep 2024</div>
+                    <div class="exp-location">Milan, Italy</div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Built LLM-based document extraction pipelines for financial services clients in Python — chain-of-thought prompt design, 50+ structured A/B variations</li>
+                        <li>Integrated OpenAI APIs into production workflows, lifting loan-parsing accuracy from ~70% to 90%+ and eliminating manual review for credit risk teams</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">Euronext Securities</div>
+                    <div class="exp-role">Custody Intern</div>
+                    <div class="exp-date">May – Nov 2023</div>
+                    <div class="exp-location">Milan, Italy</div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Automated reconciliation of 1,000+ annual corporate events with a custom internal tool, cutting processing time from ~1 hour to under 1 minute</li>
+                        <li>Eliminated a recurring operational bottleneck for the fiscal services desk across derivatives and ABS</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="exp-item">
+                <div class="exp-meta">
+                    <div class="exp-company">Deloitte Consulting</div>
+                    <div class="exp-role">Junior Analyst · Financial Services</div>
+                    <div class="exp-date">May – Aug 2022</div>
+                    <div class="exp-location">Milan, Italy</div>
+                </div>
+                <div class="exp-details">
+                    <ul>
+                        <li>Designed a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications</li>
+                        <li>Automated eligibility checks and transaction workflows enabling €10B+ in transactions</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2>Projects</h2>
-            <p class="section-intro">Applied work at the intersection of AI agents, systematic trading, and quantitative research</p>
-            
+    <!-- ═══════════════ PROJECTS ═══════════════ -->
+    <section id="projects" class="projects-section">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Projects</h2>
+                <div class="section-line"></div>
+                <span class="section-num">03</span>
+            </div>
+
             <div class="project-grid">
-                <div class="project-card">
-                    <div class="project-header">
+                <!-- FEATURED: Synapse -->
+                <div class="project-card featured">
+                    <div>
                         <h3>Synapse — Multi-LLM Autonomous Trading System</h3>
+                        <p class="project-tech">Python · Anthropic · OpenAI · xAI · Gemini · Alpaca · Docker · PostgreSQL</p>
+                        <p class="project-desc">Autonomous trading system orchestrating five LLM APIs across 50+ US equities. Integrates real-time market data, volatility and regime signals, and model-consensus logic into a Dockerized pipeline with automated execution via Alpaca.</p>
                         <div class="project-links">
                             <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
                         </div>
                     </div>
-                    <p class="project-tech">Python · Anthropic · OpenAI · xAI · Gemini · Alpaca · Docker · PostgreSQL</p>
-                    <p class="project-desc">Autonomous trading system orchestrating five LLM APIs across 50+ US equities. Integrates real-time market data, volatility and regime signals, and model-consensus logic into a Dockerized pipeline with automated execution via Alpaca.</p>
-                    <div class="project-results">
+                    <div class="project-metrics">
                         <div class="metric">
-                            <span class="metric-value">5</span>
+                            <span class="metric-val">5</span>
                             <span class="metric-label">AI Models Orchestrated</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">50+</span>
+                            <span class="metric-val">50+</span>
                             <span class="metric-label">US Equities</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">Live</span>
+                            <span class="metric-val">LIVE</span>
                             <span class="metric-label">Alpaca Execution</span>
                         </div>
                     </div>
                 </div>
 
+                <!-- Numerai -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Numerai ML Alpha Signals</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
-                            <a href="numerai-alpha.html" class="project-link">See Details →</a>
-                        </div>
-                    </div>
+                    <h3>Numerai ML Alpha Signals</h3>
                     <p class="project-tech">Python · LightGBM · Purged CV · Feature Engineering</p>
-                    <p class="project-desc">Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features for market-neutral 20-day return forecasts. Deployed live in Numerai's hedge fund with automated weekly retraining.</p>
-                    <div class="project-results">
+                    <p class="project-desc">Cross-sectional ML alpha signals on ~280M rows for market-neutral 20-day return forecasts. Deployed live in Numerai's hedge fund.</p>
+                    <div class="project-metrics">
                         <div class="metric">
-                            <span class="metric-value">1.38</span>
+                            <span class="metric-val">1.38</span>
                             <span class="metric-label">Validation Sharpe</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">0.64</span>
+                            <span class="metric-val">0.64</span>
                             <span class="metric-label">Live Sharpe</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-value">300+</span>
-                            <span class="metric-label">Eras Tested</span>
-                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                        <a href="numerai-alpha.html" class="project-link">Details →</a>
                     </div>
                 </div>
 
+                <!-- Macro Regime -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Macro Regime Duration Model</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8/macro_regime_duration" target="_blank" class="project-link">GitHub →</a>
-                            <a href="macro-regime-model.html" class="project-link">See Details →</a>
-                        </div>
-                    </div>
+                    <h3>Macro Regime Duration Model</h3>
                     <p class="project-tech">Python · statsmodels · Markov-switching · Nelson-Siegel VAR</p>
-                    <p class="project-desc">Built 3-state Markov-switching model detecting latent Recession/Growth/Expansion regimes in GDP, inflation, and unemployment. Integrated yield-curve forecast with regime-conditioned mean-variance optimizer.</p>
-                    <div class="project-results">
+                    <p class="project-desc">3-state Markov-switching model detecting latent economic regimes. Yield-curve forecast with regime-conditioned mean-variance optimizer.</p>
+                    <div class="project-metrics">
                         <div class="metric">
-                            <span class="metric-value">1.08</span>
-                            <span class="metric-label">Sharpe Ratio</span>
+                            <span class="metric-val">1.08</span>
+                            <span class="metric-label">Sharpe</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">-45%</span>
-                            <span class="metric-label">Max Drawdown</span>
+                            <span class="metric-val">87%</span>
+                            <span class="metric-label">Persistence</span>
                         </div>
-                        <div class="metric">
-                            <span class="metric-value">87%</span>
-                            <span class="metric-label">Regime Persistence</span>
-                        </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/mcravi8/macro_regime_duration" target="_blank" class="project-link">GitHub →</a>
+                        <a href="macro-regime-model.html" class="project-link">Details →</a>
                     </div>
                 </div>
 
+                <!-- Options MM -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Delta-Neutral Options Market-Making Simulator</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8/opt_mm_sim" target="_blank" class="project-link">GitHub →</a>
-                            <a href="options-mm-simulator.html" class="project-link">See Details →</a>
-                        </div>
-                    </div>
+                    <h3>Delta-Neutral Options MM Simulator</h3>
                     <p class="project-tech">Python · Black-Scholes · LightGBM · cvxpy · Streamlit</p>
-                    <p class="project-desc">Minute-level NBBO-aware delta-neutral simulator with BS theoretical pricing, Greeks calculation, and put-call parity residual tracking. Features asymmetric spreads with inventory lean and delta-band hedging.</p>
-                    <div class="project-results">
+                    <p class="project-desc">Minute-level NBBO-aware delta-neutral simulator with BS pricing, Greeks, and put-call parity tracking.</p>
+                    <div class="project-metrics">
                         <div class="metric">
-                            <span class="metric-value">8-15%</span>
-                            <span class="metric-label">Target Fill Rate</span>
+                            <span class="metric-val">550+</span>
+                            <span class="metric-label">Fills</span>
                         </div>
                         <div class="metric">
-                            <span class="metric-value">550+</span>
-                            <span class="metric-label">Fills (800-min test)</span>
+                            <span class="metric-val">8-15%</span>
+                            <span class="metric-label">Fill Rate</span>
                         </div>
+                    </div>
+                    <div class="project-links">
+                        <a href="https://github.com/mcravi8/opt_mm_sim" target="_blank" class="project-link">GitHub →</a>
+                        <a href="options-mm-simulator.html" class="project-link">Details →</a>
                     </div>
                 </div>
 
+                <!-- Parity Checker -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Options Parity Checker</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8/OptionsParityChecker_yfinance" target="_blank" class="project-link">GitHub →</a>
-                            <a href="options-parity.html" class="project-link">See Details →</a>
-                        </div>
-                    </div>
+                    <h3>Options Parity Checker</h3>
                     <p class="project-tech">Python · Options Pricing · Real-time Data</p>
                     <p class="project-desc">Real-time arbitrage detection tool for put-call parity violations across options chains.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/mcravi8/OptionsParityChecker_yfinance" target="_blank" class="project-link">GitHub →</a>
+                        <a href="options-parity.html" class="project-link">Details →</a>
+                    </div>
                 </div>
 
+                <!-- PEAD -->
                 <div class="project-card">
-                    <div class="project-header">
-                        <h3>Post-Earnings Drift Backtest</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8/PEAD-mini-WRDS" target="_blank" class="project-link">GitHub →</a>
-                            <a href="pead-backtest.html" class="project-link">See Details →</a>
-                        </div>
-                    </div>
+                    <h3>Post-Earnings Drift Backtest</h3>
                     <p class="project-tech">Python · Event Study · Statistical Analysis</p>
                     <p class="project-desc">Systematic analysis of post-earnings announcement drift patterns across market cap segments.</p>
+                    <div class="project-links">
+                        <a href="https://github.com/mcravi8/PEAD-mini-WRDS" target="_blank" class="project-link">GitHub →</a>
+                        <a href="pead-backtest.html" class="project-link">Details →</a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2>Get in Touch</h2>
-            <p class="section-intro">Open to AI engineering and quant developer roles, collaborations, and discussions</p>
+    <!-- ═══════════════ CONTACT ═══════════════ -->
+    <section id="contact">
+        <div class="section-container">
+            <div class="section-header">
+                <h2>Contact</h2>
+                <div class="section-line"></div>
+                <span class="section-num">04</span>
+            </div>
+
             <div class="contact-grid">
                 <a href="mailto:Matteo.Craviotto@gmail.com" class="contact-card">
-                    <h3>Email</h3>
-                    <p>Matteo.Craviotto@gmail.com</p>
+                    <span class="contact-label">Email</span>
+                    <span class="contact-value">Matteo.Craviotto@gmail.com</span>
                 </a>
                 <a href="https://www.linkedin.com/in/matteocraviotto/" target="_blank" class="contact-card">
-                    <h3>LinkedIn</h3>
-                    <p>/in/matteocraviotto</p>
+                    <span class="contact-label">LinkedIn</span>
+                    <span class="contact-value">/in/matteocraviotto</span>
                 </a>
                 <a href="https://github.com/mcravi8" target="_blank" class="contact-card">
-                    <h3>GitHub</h3>
-                    <p>@mcravi8</p>
+                    <span class="contact-label">GitHub</span>
+                    <span class="contact-value">@mcravi8</span>
                 </a>
-                <a href="https://calendly.com/matteo-craviotto-8tcq/new-meeting" target="_blank" class="contact-card calendly">
-                    <h3>15-min Chat</h3>
-                    <p>Book a quick call →</p>
+                <a href="https://calendly.com/matteo-craviotto-8tcq/new-meeting" target="_blank" class="contact-card">
+                    <span class="contact-label">Schedule</span>
+                    <span class="contact-value">15-min call →</span>
                 </a>
             </div>
         </div>
     </section>
 
     <footer>
-        <div class="container">
-            <p>© 2026 Matteo Craviotto</p>
-        </div>
+        <p>© 2026 Matteo Craviotto</p>
     </footer>
+
+    <script>
+        // Active nav link on scroll
+        window.addEventListener('scroll', () => {
+            let current = '';
+            const sections = document.querySelectorAll('section[id]');
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop - 100;
+                if (pageYOffset >= sectionTop) {
+                    current = section.getAttribute('id');
+                }
+            });
+            if ((window.innerHeight + window.pageYOffset) >= document.body.offsetHeight - 5) {
+                current = 'contact';
+            }
+            document.querySelectorAll('.nav-links a').forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href') === `#${current}`) {
+                    link.classList.add('active');
+                }
+            });
+        });
+    </script>
 </body>
 </html>
