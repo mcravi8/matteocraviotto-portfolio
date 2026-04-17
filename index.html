@@ -191,19 +191,16 @@
         }
       }
 
-      /* Option A: Center everything to viewport, ignore sidebar */
-      .container {
-        max-width: 1100px;
-        margin-left: auto !important;
-        margin-right: auto !important;
-        padding-left: 20px;
-        padding-right: 20px;
-        position: relative;
-        left: 0 !important;
-      }
-
-      section, footer {
-        width: 100%;
+      /* Fix: center only section titles and intros to the full viewport */
+      .about h2,
+      .experience h2,
+      .projects h2,
+      .contact h2,
+      .section-intro,
+      footer .container p {
+        position: relative !important;
+        left: calc(-120px) !important;
+        text-align: center !important;
       }
     </style>
 </head>
