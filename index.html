@@ -11,7 +11,7 @@
     <meta name="author" content="Matteo Craviotto">
 
     <meta property="og:title" content="Matteo Craviotto - AI Engineer & Quant Developer">
-    <meta property="og:description" content="Building AI agents and internal tools for investment workflows. USC MS Financial Engineering.">
+    <meta property="og:description" content="Production AI systems for investment workflows. USC MS Financial Engineering.">
     <meta property="og:url" content="https://matteocraviotto.me">
     <meta property="og:type" content="website">
 
@@ -20,7 +20,6 @@
     <link rel="stylesheet" href="style.css">
 
     <script>
-      // Smooth scrolling for all anchor links
       document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function (e) {
           e.preventDefault();
@@ -30,7 +29,6 @@
         });
       });
 
-      // Add active class to nav links on scroll
       window.addEventListener('scroll', () => {
         let current = '';
         const sections = document.querySelectorAll('section[id]');
@@ -77,7 +75,6 @@
         scroll-behavior: smooth;
       }
 
-      /* Grid Overlay */
       body::before {
         content: '';
         position: fixed;
@@ -94,7 +91,6 @@
         z-index: 0;
       }
 
-      /* Compact sidebar spacing */
       .sidebar-item {
         margin-bottom: 8px !important;
       }
@@ -111,30 +107,11 @@
         margin-bottom: 15px !important;
       }
 
-      .hero-legal {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        gap: 8px;
-        margin-top: 10px;
-        font-size: 0.9rem;
-        color: #0066ff;
-      }
-
-      /* Tighten sidebar spacing */
       .sidebar-item {
         margin-bottom: 10px !important;
       }
       .sidebar-item h4 {
         margin-bottom: 1px !important;
-      }
-      .sidebar-item .sidebar-role,
-      .sidebar-item .sidebar-meta {
-        margin: 0 !important;
-        line-height: 1.3 !important;
-      }
-      .sidebar-section {
-        margin-bottom: 15px !important;
       }
 
       .contact-card.calendly {
@@ -148,67 +125,21 @@
         box-shadow: 0 10px 20px rgba(0,102,255,0.3);
       }
 
-      .legal-section {
-        background-color: #f8f9fa;
-        padding: 30px 0;
-        border-bottom: 1px solid #e1e4e8;
-        margin-top: -20px;
-      }
-      .legal-box {
-        background: white;
-        border: 1px solid #e1e4e8;
-        border-radius: 12px;
-        padding: 30px;
+      .work-auth-note {
         max-width: 900px;
-        margin: 0 auto;
-        box-shadow: 0 4px 6px rgba(0,0,0,0.02);
-      }
-      .legal-header {
-        text-align: center;
-        margin-bottom: 25px;
-        color: #333;
-        font-size: 1.3rem;
-        font-weight: 700;
-      }
-      .legal-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        text-align: center;
-      }
-      .legal-item {
-        flex: 1;
-        padding: 0 10px;
-      }
-      .legal-item h4 {
-        margin: 0 0 8px 0;
-        color: #0066ff;
-        font-size: 1.1rem;
-        font-weight: 700;
-      }
-      .legal-item p {
-        margin: 0;
-        font-size: 0.95rem;
+        margin: 30px auto 0;
+        padding: 18px 24px;
+        background: #f8f9fa;
+        border-left: 3px solid #0066ff;
+        border-radius: 4px;
+        font-size: 0.9rem;
         color: #555;
-        line-height: 1.4;
+        line-height: 1.5;
       }
-      
-      @media (min-width: 768px) {
-        .legal-grid {
-          flex-direction: row;
-          align-items: flex-start;
-          gap: 0;
-        }
-        .legal-item {
-          border-right: 1px solid #e1e4e8;
-          padding: 0 20px;
-        }
-        .legal-item:last-child {
-          border-right: none;
-        }
+      .work-auth-note strong {
+        color: #333;
       }
 
-      /* Fix: center only section titles and intros to the full viewport */
       .about h2,
       .experience h2,
       .projects h2,
@@ -246,7 +177,7 @@
             </div>
             <div class="sidebar-item">
                 <h4>Self-employed</h4>
-                <p class="sidebar-role">AI Engineer & Algo Trader</p>
+                <p class="sidebar-role">Quant Systems Developer</p>
                 <p class="sidebar-meta">Sep 2025 – Present</p>
             </div>
             <div class="sidebar-item">
@@ -287,7 +218,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Matteo Craviotto</h1>
-            <p class="hero-subtitle">AI Agents for Investment Workflows · Multi-LLM Systems · Systematic Trading · Financial Engineering</p>
+            <p class="hero-subtitle">Production AI systems for investment workflows — LLM orchestration, multi-model trading pipelines, and automation tooling between investors and their data.</p>
             <div class="hero-links">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 <a href="#contact" class="btn-secondary">Get in Touch</a>
@@ -297,11 +228,6 @@
                 <span>·</span>
                 <span>MS Financial Engineering @ USC · GPA 3.93</span>
             </div>
-            <div class="hero-legal">
-                <span><strong>F-1 Visa</strong> · STEM OPT eligible — 3 years of work authorization from Dec 2026</span>
-                <span>·</span>
-                <span><strong>No employer petition required</strong></span>
-            </div>
         </div>
     </section>
 
@@ -310,7 +236,8 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>MS Financial Engineering student at USC building AI agents and internal tooling for investment workflows — LLM-orchestrated research systems, multi-model trading pipelines, and automation tools that sit between investors and their data. Currently running a production multi-LLM trading system across 50+ US equities and a prediction-market platform on Kalshi.</p>
+                    <p>Production AI systems for investment workflows — LLM orchestration, multi-model trading pipelines, automation tooling between investors and their data.</p>
+                    <p>The pattern: take a manual, judgment-heavy financial process and replace it with something systematic and measurable. Running a multi-LLM trading system across 50+ US equities, a prediction-market platform on Kalshi, and an AI due-diligence memo pipeline for family offices.</p>
                     <p>Focused on where AI agents meet capital markets: investment research automation, systematic strategies, and tools that compress the distance between a thesis and a trade.</p>
                     <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV →</a>
                 </div>
@@ -367,7 +294,7 @@
                         <div class="timeline-header">
                             <div>
                                 <h3>Self-employed</h3>
-                                <p class="role">Independent AI Engineer & Algorithmic Trader</p>
+                                <p class="role">Quantitative Systems Developer</p>
                             </div>
                             <div class="timeline-meta">
                                 <span class="date">Sep 2025 – Present</span>
@@ -377,6 +304,7 @@
                         <ul>
                             <li>Built an autonomous multi-LLM research and execution system orchestrating five AI APIs (Anthropic, OpenAI, xAI, Google, Perplexity) across 50+ US equities — integrated real-time market data, regime signals, and model-consensus logic into a Dockerized Python pipeline with PostgreSQL and automated Alpaca execution</li>
                             <li>Shipped a prediction-market trading platform on Kalshi with real-time scanners, empirically-calibrated edge model (72M+ trades), and layered risk engine — deployed on Azure with automated REST execution</li>
+                            <li>Built AI due-diligence memo pipeline for family offices: Haiku-orchestrated multi-agent system with Pydantic v2 schemas and hybrid parallel architecture, deployed on Azure</li>
                         </ul>
                     </div>
                 </div>
@@ -483,15 +411,65 @@
                     <div class="project-results">
                         <div class="metric">
                             <span class="metric-value">5</span>
-                            <span class="metric-label">AI Models Orchestrated</span>
+                            <span class="metric-label">Models Orchestrated</span>
                         </div>
                         <div class="metric">
                             <span class="metric-value">50+</span>
-                            <span class="metric-label">US Equities</span>
+                            <span class="metric-label">US Equities Universe</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">24/7</span>
+                            <span class="metric-label">Dockerized Uptime</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>MemoGen — AI Due-Diligence for Family Offices</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Anthropic Claude · Pydantic v2 · FastAPI · Azure</p>
+                    <p class="project-desc">Multi-agent due-diligence memo pipeline with Haiku orchestrator coordinating specialist agents for company research, financials, risk assessment, and competitive analysis. Hybrid parallel architecture, schema-validated outputs.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">4+</span>
+                            <span class="metric-label">Specialist Agents</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Parallel</span>
+                            <span class="metric-label">Execution Architecture</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Azure</span>
+                            <span class="metric-label">Production Deploy</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Kalshi Prediction-Market Platform</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Kalshi REST API · Azure · PostgreSQL</p>
+                    <p class="project-desc">Systematic trading platform exploiting favorite-longshot bias on Kalshi BTC/crypto range markets. Real-time scanners, empirically-calibrated edge model on 72M+ historical contracts, momentum gate, and dynamic asset cap.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">72M+</span>
+                            <span class="metric-label">Contracts Analyzed</span>
                         </div>
                         <div class="metric">
                             <span class="metric-value">Live</span>
-                            <span class="metric-label">Alpaca Execution</span>
+                            <span class="metric-label">Azure Deploy</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Layered</span>
+                            <span class="metric-label">Risk Engine</span>
                         </div>
                     </div>
                 </div>
@@ -618,6 +596,9 @@
                     <h3>15-min Chat</h3>
                     <p>Book a quick call →</p>
                 </a>
+            </div>
+            <div class="work-auth-note">
+                <strong>Work authorization:</strong> F-1 visa, STEM OPT eligible — 3 years of work authorization from Dec 2026. No employer petition required.
             </div>
         </div>
     </section>
