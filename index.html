@@ -77,7 +77,7 @@
 
       body::before {
         content: '';
-        position: fixed;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
@@ -89,6 +89,10 @@
         opacity: 0.03;
         pointer-events: none;
         z-index: 0;
+      }
+
+      body {
+        position: relative;
       }
 
       .sidebar-item {
@@ -172,22 +176,22 @@
             <h3>Experience</h3>
             <div class="sidebar-item">
                 <h4>USC Marshall</h4>
-                <p class="sidebar-role">Teaching Assistant</p>
-                <p class="sidebar-meta">Jan 2025 – Present</p>
+                <p class="sidebar-role">AI Integration Consultant</p>
+                <p class="sidebar-meta">May 2026 – Present</p>
             </div>
             <div class="sidebar-item">
-                <h4>Self-employed</h4>
-                <p class="sidebar-role">Quant Systems Developer</p>
+                <h4>USC Marshall</h4>
+                <p class="sidebar-role">Teaching Assistant</p>
+                <p class="sidebar-meta">Jan 2025 – May 2026</p>
+            </div>
+            <div class="sidebar-item">
+                <h4>Self-directed</h4>
+                <p class="sidebar-role">Quant Researcher & Dev.</p>
                 <p class="sidebar-meta">Sep 2025 – Present</p>
             </div>
             <div class="sidebar-item">
-                <h4>Numerai</h4>
-                <p class="sidebar-role">Quant Researcher</p>
-                <p class="sidebar-meta">May – Aug 2025</p>
-            </div>
-            <div class="sidebar-item">
                 <h4>DEFINEX</h4>
-                <p class="sidebar-role">Prompt Engineer</p>
+                <p class="sidebar-role">Data Quality Analyst</p>
                 <p class="sidebar-meta">Apr – Sep 2024</p>
             </div>
             <div class="sidebar-item">
@@ -218,7 +222,7 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Matteo Craviotto</h1>
-            <p class="hero-subtitle">Production AI systems for investment workflows — LLM orchestration, multi-model trading pipelines, and automation tooling between investors and their data.</p>
+            <p class="hero-subtitle">Production AI systems for investment workflows — multi-model orchestration, systematic trading platforms, and automation tooling between investors and their data.</p>
             <div class="hero-links">
                 <a href="#projects" class="btn-primary">View Projects</a>
                 <a href="#contact" class="btn-secondary">Get in Touch</a>
@@ -226,7 +230,7 @@
             <div class="hero-meta">
                 <span>Los Angeles, CA</span>
                 <span>·</span>
-                <span>MS Financial Engineering @ USC · GPA 3.93</span>
+                <span>MS Financial Engineering @ USC · GPA 3.95</span>
             </div>
         </div>
     </section>
@@ -236,28 +240,28 @@
             <h2>About Me</h2>
             <div class="about-content">
                 <div class="about-text">
-                    <p>Production AI systems for investment workflows — LLM orchestration, multi-model trading pipelines, automation tooling between investors and their data.</p>
-                    <p>The pattern: take a manual, judgment-heavy financial process and replace it with something systematic and measurable. Running a multi-LLM trading system across 50+ US equities, a prediction-market platform on Kalshi, and an AI due-diligence memo pipeline for family offices.</p>
+                    <p>Production AI systems for investment workflows — multi-model orchestration, systematic trading platforms, and automation tooling between investors and their data.</p>
+                    <p>The pattern: take a manual, judgment-heavy financial process and replace it with something systematic and measurable. Running a multi-model trading system across 50+ US equities, a live prediction-market platform on Kalshi with a deployed risk engine, and AI orchestration infrastructure for investment research workflows.</p>
                     <p>Focused on where AI agents meet capital markets: investment research automation, systematic strategies, and tools that compress the distance between a thesis and a trade.</p>
                     <a href="https://github.com/mcravi8/matteocraviotto-portfolio/raw/main/cv.MatteoCraviotto.pdf" class="cv-download" target="_blank">Download CV →</a>
                 </div>
                 <div class="skills-box">
                     <h3>Technical Skills</h3>
                     <div class="skill-category">
+                        <h4>Quantitative & Risk Methods</h4>
+                        <p>Time-series forecasting (ARIMA/GARCH) · Regime detection · Derivatives pricing · Portfolio optimization · Monte Carlo · Factor modeling · VaR · Stress testing</p>
+                    </div>
+                    <div class="skill-category">
+                        <h4>Data & Automation</h4>
+                        <p>Python (pandas, NumPy, scikit-learn, statsmodels, LightGBM, PyTorch, FastAPI) · SQL (PostgreSQL) · Docker · Azure · REST APIs · cron automation · Git · LaTeX</p>
+                    </div>
+                    <div class="skill-category">
                         <h4>AI & LLM Engineering</h4>
-                        <p>OpenAI · Anthropic · xAI · Google Gemini APIs · Agentic workflows · Multi-model orchestration · Prompt engineering · RAG · Browser automation</p>
+                        <p>Multi-model orchestration · Agentic workflows · Prompt engineering · RAG · Proof-of-concept AI for risk automation</p>
                     </div>
                     <div class="skill-category">
-                        <h4>Languages & Tools</h4>
-                        <p>Python · TypeScript/JavaScript · React · SQL (PostgreSQL) · Bash/Linux · Git · LaTeX</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Infrastructure</h4>
-                        <p>Docker · Azure · FastAPI · REST APIs · Production deployment · cron automation</p>
-                    </div>
-                    <div class="skill-category">
-                        <h4>Finance & Methods</h4>
-                        <p>Equity valuation (DCF/multiples/LBO) · Derivatives pricing · Time-series (ARIMA/GARCH) · Portfolio optimization · Risk management</p>
+                        <h4>Languages</h4>
+                        <p>Italian (native) · English (fluent) · French and Spanish (conversational)</p>
                     </div>
                 </div>
             </div>
@@ -274,27 +278,8 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>USC Marshall School of Business</h3>
-                                <p class="role">Graduate Teaching Assistant · FBE-529 Financial Analysis and Valuation</p>
-                            </div>
-                            <div class="timeline-meta">
-                                <span class="date">Jan 2025 – Present</span>
-                                <span class="location">Los Angeles, CA</span>
-                            </div>
-                        </div>
-                        <ul>
-                            <li>Teach equity valuation (DCF, multiples, LBO) to 30+ MBA students — building fluency in the fundamental frameworks used daily by L/S equity analysts</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <div>
-                                <h3>Self-employed</h3>
-                                <p class="role">Quantitative Systems Developer</p>
+                                <h3>Self-directed</h3>
+                                <p class="role">Independent Quantitative Researcher & Developer</p>
                             </div>
                             <div class="timeline-meta">
                                 <span class="date">Sep 2025 – Present</span>
@@ -302,9 +287,8 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Built an autonomous multi-LLM research and execution system orchestrating five AI APIs (Anthropic, OpenAI, xAI, Google, Perplexity) across 50+ US equities — integrated real-time market data, regime signals, and model-consensus logic into a Dockerized Python pipeline with PostgreSQL and automated Alpaca execution</li>
-                            <li>Shipped a prediction-market trading platform on Kalshi with real-time scanners, empirically-calibrated edge model (72M+ trades), and layered risk engine — deployed on Azure with automated REST execution</li>
-                            <li>Built AI due-diligence memo pipeline for family offices: Haiku-orchestrated multi-agent system with Pydantic v2 schemas and hybrid parallel architecture, deployed on Azure</li>
+                            <li>Designed and deployed a live risk engine for a prediction-market trading platform (Kalshi): exposure caps, daily loss limits, confidence-adjusted sizing, and Azure-hosted monitoring dashboards. Authored a 10-page forensic post-mortem decomposing live-vs-paper PnL divergence into component risk factors with pre-registered out-of-sample filters and shadow-data logging.</li>
+                            <li>Built a multi-model AI orchestration framework in Python dispatching configurable analytical agents across leading LLM APIs — cost-efficient, self-improving infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</li>
                         </ul>
                     </div>
                 </div>
@@ -314,18 +298,16 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>Numerai</h3>
-                                <p class="role">Quantitative Researcher (Competition)</p>
+                                <h3>USC Marshall School of Business</h3>
+                                <p class="role">AI Integration Consultant</p>
                             </div>
                             <div class="timeline-meta">
-                                <span class="date">May – Aug 2025</span>
+                                <span class="date">May 2026 – Present</span>
                                 <span class="location">Los Angeles, CA</span>
                             </div>
                         </div>
                         <ul>
-                            <li>Developed cross-sectional ML alpha signals on ~280M rows and 2.4k features, generating market-neutral 20-day return forecasts</li>
-                            <li>Achieved robust validation performance (CORR ≈ 0.039, Sharpe ≈ 1.38) using LightGBM with purged time-series validation</li>
-                            <li>Deployed live signals to Numerai hedge fund (forward Sharpe ≈ 0.64 ongoing)</li>
+                            <li>Helping Marshall faculty understand current AI capabilities and design controlled learning environments for students — hallucination-constrained setups where model outputs are scoped to professor-defined teaching policies (e.g. guiding students through reasoning rather than delivering final answers).</li>
                         </ul>
                     </div>
                 </div>
@@ -335,8 +317,27 @@
                     <div class="timeline-content">
                         <div class="timeline-header">
                             <div>
-                                <h3>DEFINEX</h3>
-                                <p class="role">Prompt Engineer</p>
+                                <h3>USC Marshall School of Business</h3>
+                                <p class="role">Graduate Teaching Assistant · FBE-529 Financial Analysis and Valuation</p>
+                            </div>
+                            <div class="timeline-meta">
+                                <span class="date">Jan 2025 – May 2026</span>
+                                <span class="location">Los Angeles, CA</span>
+                            </div>
+                        </div>
+                        <ul>
+                            <li>Taught equity valuation (DCF, multiples, LBO, APV, economic profit) to 30+ MBA students; graded weekly case memos and provided detailed written feedback on financial analysis and assumption quality across diverse industries and capital structures.</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <div class="timeline-header">
+                            <div>
+                                <h3>DefineX</h3>
+                                <p class="role">Analyst · Data Quality & Process Automation</p>
                             </div>
                             <div class="timeline-meta">
                                 <span class="date">Apr – Sep 2024</span>
@@ -344,8 +345,7 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Built LLM-based document extraction pipelines for financial services clients in Python — chain-of-thought prompt design, 50+ structured A/B variations</li>
-                            <li>Integrated OpenAI APIs into production workflows, lifting loan-parsing accuracy from ~70% to 90%+ and eliminating manual review for credit risk teams</li>
+                            <li>Identified and quantified data quality gaps in loan-application document processing for major Italian financial services clients; designed a structured evaluation framework with 50+ tested variants, improving extraction accuracy from ~70% to 90%+ and eliminating manual review bottlenecks for credit risk teams.</li>
                         </ul>
                     </div>
                 </div>
@@ -364,8 +364,7 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Automated reconciliation of 1,000+ annual corporate events with a custom internal tool, cutting processing time from ~1 hour to under 1 minute</li>
-                            <li>Eliminated a recurring operational bottleneck for the fiscal services desk across derivatives and ABS</li>
+                            <li>Reconciled 1,000+ annual corporate events (dividends, coupons, tender offers, mergers) across derivatives and asset-backed securities, identifying and resolving operational discrepancies across custody, tax, and operations teams. Built an automation tool cutting processing time from ~1 hour to under 1 minute — an operational risk control improvement with direct, measurable impact.</li>
                         </ul>
                     </div>
                 </div>
@@ -376,7 +375,7 @@
                         <div class="timeline-header">
                             <div>
                                 <h3>Deloitte Consulting</h3>
-                                <p class="role">Junior Analyst · Financial Services</p>
+                                <p class="role">Junior Analyst · Financial Services Industry</p>
                             </div>
                             <div class="timeline-meta">
                                 <span class="date">May – Aug 2022</span>
@@ -384,8 +383,7 @@
                             </div>
                         </div>
                         <ul>
-                            <li>Designed a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications</li>
-                            <li>Automated eligibility checks and transaction workflows enabling €10B+ in transactions</li>
+                            <li>Designed a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications enabling €10B+ in transactions.</li>
                         </ul>
                     </div>
                 </div>
@@ -401,12 +399,12 @@
             <div class="project-grid">
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>Synapse — Multi-LLM Autonomous Trading System</h3>
+                        <h3>Synapse — Multi-Model Autonomous Trading System</h3>
                         <div class="project-links">
                             <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
                         </div>
                     </div>
-                    <p class="project-tech">Python · Anthropic · OpenAI · xAI · Gemini · Alpaca · Docker · PostgreSQL</p>
+                    <p class="project-tech">Python · Multi-LLM Orchestration · Alpaca · Docker · PostgreSQL</p>
                     <p class="project-desc">Autonomous trading system orchestrating five LLM APIs across 50+ US equities. Integrates real-time market data, volatility and regime signals, and model-consensus logic into a Dockerized pipeline with automated execution via Alpaca.</p>
                     <div class="project-results">
                         <div class="metric">
@@ -426,38 +424,13 @@
 
                 <div class="project-card">
                     <div class="project-header">
-                        <h3>MemoGen — AI Due-Diligence for Family Offices</h3>
+                        <h3>Kalshi Prediction-Market Risk Engine</h3>
                         <div class="project-links">
                             <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
                         </div>
                     </div>
-                    <p class="project-tech">Python · Anthropic Claude · Pydantic v2 · FastAPI · Azure</p>
-                    <p class="project-desc">Multi-agent due-diligence memo pipeline with Haiku orchestrator coordinating specialist agents for company research, financials, risk assessment, and competitive analysis. Hybrid parallel architecture, schema-validated outputs.</p>
-                    <div class="project-results">
-                        <div class="metric">
-                            <span class="metric-value">4+</span>
-                            <span class="metric-label">Specialist Agents</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-value">Parallel</span>
-                            <span class="metric-label">Execution Architecture</span>
-                        </div>
-                        <div class="metric">
-                            <span class="metric-value">Azure</span>
-                            <span class="metric-label">Production Deploy</span>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="project-card">
-                    <div class="project-header">
-                        <h3>Kalshi Prediction-Market Platform</h3>
-                        <div class="project-links">
-                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
-                        </div>
-                    </div>
-                    <p class="project-tech">Python · Kalshi REST API · Azure · PostgreSQL</p>
-                    <p class="project-desc">Systematic trading platform exploiting favorite-longshot bias on Kalshi BTC/crypto range markets. Real-time scanners, empirically-calibrated edge model on 72M+ historical contracts, momentum gate, and dynamic asset cap.</p>
+                    <p class="project-tech">Python · Kalshi REST API · Azure · PostgreSQL · Risk Analytics</p>
+                    <p class="project-desc">Live risk engine for a prediction-market trading platform: exposure caps, daily loss limits, confidence-adjusted sizing, and Azure-hosted monitoring dashboards. Edge model empirically calibrated on 72M+ historical contracts. Forensic post-mortem decomposing live-vs-paper PnL divergence into component risk factors.</p>
                     <div class="project-results">
                         <div class="metric">
                             <span class="metric-value">72M+</span>
@@ -469,7 +442,32 @@
                         </div>
                         <div class="metric">
                             <span class="metric-value">Layered</span>
-                            <span class="metric-label">Risk Engine</span>
+                            <span class="metric-label">Risk Controls</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-header">
+                        <h3>Multi-Model AI Orchestration Framework</h3>
+                        <div class="project-links">
+                            <a href="https://github.com/mcravi8" target="_blank" class="project-link">GitHub →</a>
+                        </div>
+                    </div>
+                    <p class="project-tech">Python · Multi-LLM Orchestration · FastAPI · Azure · Pydantic</p>
+                    <p class="project-desc">Python framework dispatching configurable analytical agents across leading LLM APIs — cost-efficient, self-improving infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</p>
+                    <div class="project-results">
+                        <div class="metric">
+                            <span class="metric-value">Agentic</span>
+                            <span class="metric-label">Workflow Engine</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Parallel</span>
+                            <span class="metric-label">Execution Architecture</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-value">Azure</span>
+                            <span class="metric-label">Production Deploy</span>
                         </div>
                     </div>
                 </div>
@@ -598,7 +596,7 @@
                 </a>
             </div>
             <div class="work-auth-note">
-                <strong>Work authorization:</strong> F-1 visa, STEM OPT eligible — 3 years of work authorization from Dec 2026. No employer petition required.
+                <strong>Work authorization:</strong> F-1 visa, STEM OPT eligible — 3 years of work authorization from Dec 2026, no employer petition required. UK: EU Pre-Settlement Scheme, no employer sponsorship required.
             </div>
         </div>
     </section>
