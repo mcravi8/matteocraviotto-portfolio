@@ -9,10 +9,39 @@
 <meta name="author" content="Matteo Craviotto">
 <meta name="keywords" content="AI engineer, LLM agents, quant developer, algorithmic trading, financial engineering, USC, Los Angeles">
 
+<link rel="canonical" href="https://matteocraviotto.me/">
+
 <meta property="og:title" content="Matteo Craviotto — AI Engineer & Quant Developer">
 <meta property="og:description" content="Production AI systems for investment workflows. USC MS Financial Engineering.">
 <meta property="og:url" content="https://matteocraviotto.me">
 <meta property="og:type" content="website">
+<!-- PLACEHOLDER: create /og-image.png (1200x630, name + role, high contrast) and upload to site root -->
+<meta property="og:image" content="https://matteocraviotto.me/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Matteo Craviotto — AI Engineer & Quant Developer">
+<meta name="twitter:description" content="Production AI systems for investment workflows. USC MS Financial Engineering.">
+<meta name="twitter:image" content="https://matteocraviotto.me/og-image.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Matteo Craviotto",
+  "jobTitle": "AI Engineer & Quant Developer",
+  "url": "https://matteocraviotto.me",
+  "address": { "@type": "PostalAddress", "addressLocality": "Los Angeles", "addressRegion": "CA", "addressCountry": "US" },
+  "alumniOf": [
+    { "@type": "CollegeOrUniversity", "name": "University of Southern California" },
+    { "@type": "CollegeOrUniversity", "name": "ESCP Business School" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/matteocraviotto/",
+    "https://github.com/mcravi8"
+  ]
+}
+</script>
 
 <link rel="icon" href="/favicon.ico" type="image/x-icon">
 
@@ -710,7 +739,7 @@
     </div>
     <div class="sb-item">
       <h4>DEFINEX</h4>
-      <p class="role">Data Quality Analyst</p>
+      <p class="role">Prompt Engineer</p>
       <p class="meta">Apr – Sep 2024</p>
     </div>
     <div class="sb-item">
@@ -816,7 +845,7 @@
           </div>
           <ul>
             <li>Designed and deployed a live risk engine for a prediction-market trading platform (Kalshi): exposure caps, daily loss limits, confidence-adjusted sizing, and Azure-hosted monitoring dashboards. Authored a 10-page forensic post-mortem decomposing live-vs-paper PnL divergence into component risk factors with pre-registered out-of-sample filters and shadow-data logging.</li>
-            <li>Built a multi-model AI orchestration framework in Python dispatching configurable analytical agents across leading LLM APIs — cost-efficient, self-improving infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</li>
+            <li>Built a multi-model AI orchestration framework in Python dispatching configurable analytical agents across leading LLM APIs — cost-efficient infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</li>
           </ul>
         </div>
       </div>
@@ -858,7 +887,7 @@
           <div class="tl-head">
             <div>
               <h3>DefineX</h3>
-              <p class="role">Analyst · Data Quality &amp; Process Automation</p>
+              <p class="role">Prompt Engineer</p>
             </div>
             <div class="tl-meta">
               <span>Apr – Sep 2024</span>
@@ -922,10 +951,43 @@
 
       <article class="project">
         <div class="project-head">
-          <h3>Synapse — Multi-Model Autonomous Trading System</h3>
+          <h3>Numa — AI Stock Research Terminal</h3>
+        </div>
+        <p class="tech">Python · FastAPI · Embedded LLM Analyst · FRED · SEC EDGAR · PWA</p>
+        <p class="desc">Full-stack financial research platform. FastAPI backend running nine parallel data modules per ticker — quotes, financials, technicals, options flow, SEC EDGAR insider filings, news sentiment, peers, earnings, analyst ratings — plus a FRED macroeconomic layer. Embedded LLM analyst receives a dynamically constructed full-context system prompt on every call, with per-call token-cost tracking. Deployed as an installable PWA.</p>
+        <div class="metrics">
+          <div class="metric"><span class="v">9</span><span class="l">Parallel Data Modules</span></div>
+          <div class="metric"><span class="v">7</span><span class="l">Pre-built Analyses</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Multi-Model AI Orchestration Framework</h3>
+        </div>
+        <p class="tech">Python · Multi-LLM Orchestration · FastAPI · Azure · Pydantic</p>
+        <p class="desc">Python framework dispatching configurable analytical agents across leading LLM APIs — cost-efficient infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</p>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Vero — Multi-Agent Physical Therapy System</h3>
           <div class="project-links">
-            <a href="https://github.com/mcravi8" target="_blank" rel="noopener">GitHub →</a>
+            <a href="https://github.com/AbhigyaGoel/vero" target="_blank" rel="noopener">GitHub →</a>
           </div>
+        </div>
+        <p class="tech">Next.js · TypeScript · Claude Sonnet · Claude Vision · ElevenLabs · Supabase</p>
+        <p class="desc">Six-agent clinical decision-support system for physical therapy, built in 24 hours with typed inter-agent contracts. Claude Vision with MediaPipe pose detection, voice guidance via ElevenLabs. 2nd place at the Caltech × UCLA × USC Claude Hackathon.</p>
+        <div class="metrics">
+          <div class="metric"><span class="v">2nd</span><span class="l">of 50+ Teams</span></div>
+          <div class="metric"><span class="v">6</span><span class="l">Agents</span></div>
+          <div class="metric"><span class="v">24</span><span class="l">Hours to Build</span></div>
+        </div>
+      </article>
+
+      <article class="project">
+        <div class="project-head">
+          <h3>Synapse — Multi-Model Autonomous Trading System</h3>
         </div>
         <p class="tech">Python · Multi-LLM Orchestration · Alpaca · Docker · PostgreSQL</p>
         <p class="desc">Autonomous trading system orchestrating five LLM APIs across 50+ US equities. Integrates real-time market data, volatility and regime signals, and model-consensus logic into a Dockerized pipeline with automated execution via Alpaca.</p>
@@ -939,32 +1001,12 @@
       <article class="project">
         <div class="project-head">
           <h3>Kalshi Prediction-Market Risk Engine</h3>
-          <div class="project-links">
-            <a href="https://github.com/mcravi8" target="_blank" rel="noopener">GitHub →</a>
-          </div>
         </div>
         <p class="tech">Python · Kalshi REST API · Azure · PostgreSQL · Risk Analytics</p>
         <p class="desc">Live risk engine for a prediction-market trading platform: exposure caps, daily loss limits, confidence-adjusted sizing, and Azure-hosted monitoring dashboards. Edge model empirically calibrated on 72M+ historical contracts. Forensic post-mortem decomposing live-vs-paper PnL divergence into component risk factors.</p>
         <div class="metrics">
           <div class="metric"><span class="v">72M+</span><span class="l">Contracts</span></div>
-          <div class="metric"><span class="v">Live</span><span class="l">Azure Deploy</span></div>
-          <div class="metric"><span class="v">Layered</span><span class="l">Risk Controls</span></div>
-        </div>
-      </article>
-
-      <article class="project">
-        <div class="project-head">
-          <h3>Multi-Model AI Orchestration Framework</h3>
-          <div class="project-links">
-            <a href="https://github.com/mcravi8" target="_blank" rel="noopener">GitHub →</a>
-          </div>
-        </div>
-        <p class="tech">Python · Multi-LLM Orchestration · FastAPI · Azure · Pydantic</p>
-        <p class="desc">Python framework dispatching configurable analytical agents across leading LLM APIs — cost-efficient, self-improving infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</p>
-        <div class="metrics">
-          <div class="metric"><span class="v">Agentic</span><span class="l">Workflow Engine</span></div>
-          <div class="metric"><span class="v">Parallel</span><span class="l">Execution</span></div>
-          <div class="metric"><span class="v">Azure</span><span class="l">Production</span></div>
+          <div class="metric"><span class="v">2,490</span><span class="l">Resolved Trades</span></div>
         </div>
       </article>
 
@@ -972,7 +1014,6 @@
         <div class="project-head">
           <h3>Numerai ML Alpha Signals</h3>
           <div class="project-links">
-            <a href="https://github.com/mcravi8" target="_blank" rel="noopener">GitHub →</a>
             <a href="numerai-alpha.html">Details →</a>
           </div>
         </div>
@@ -997,7 +1038,7 @@
         <p class="desc">3-state Markov-switching model detecting latent Recession/Growth/Expansion regimes in GDP, inflation, and unemployment. Integrated yield-curve forecast with regime-conditioned mean-variance optimizer.</p>
         <div class="metrics">
           <div class="metric"><span class="v">1.08</span><span class="l">Sharpe</span></div>
-          <div class="metric"><span class="v">−45%</span><span class="l">Max Drawdown</span></div>
+          <div class="metric"><span class="v">−45%</span><span class="l">vs Benchmark DD</span></div>
           <div class="metric"><span class="v">87%</span><span class="l">Persistence</span></div>
         </div>
       </article>
