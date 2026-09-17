@@ -749,6 +749,11 @@
       <p class="meta">Sep 2025 – Present</p>
     </div>
     <div class="sb-item">
+      <h4>USC (Prof. Ioannou)</h4>
+      <p class="role">Directed Research</p>
+      <p class="meta">Fall 2026 – Present</p>
+    </div>
+    <div class="sb-item">
       <h4>DEFINEX</h4>
       <p class="role">Prompt Engineer</p>
       <p class="meta">Apr – Sep 2024</p>
@@ -822,11 +827,11 @@
         </div>
         <div class="skill">
           <h4>Data &amp; Automation</h4>
-          <p>Python (pandas, NumPy, scikit-learn, statsmodels, LightGBM, PyTorch, FastAPI) · SQL (PostgreSQL) · Docker · Azure · REST APIs · cron automation · Git · LaTeX</p>
+          <p>Python (pandas, NumPy, scikit-learn, statsmodels, LightGBM, FastAPI) · SQL (PostgreSQL) · Docker · Azure · REST APIs · cron automation · Git · LaTeX</p>
         </div>
         <div class="skill">
           <h4>AI &amp; LLM Engineering</h4>
-          <p>Multi-model orchestration · Agentic workflows · Prompt engineering · RAG · Proof-of-concept AI for risk automation</p>
+          <p>Multi-model orchestration · Agentic workflows · Prompt engineering · RAG · LLM evaluation</p>
         </div>
         <div class="skill">
           <h4>Languages</h4>
@@ -858,7 +863,26 @@
           </div>
           <ul>
             <li>Designed and deployed a live risk engine for a prediction-market trading platform (Kalshi): exposure caps, daily loss limits, confidence-adjusted sizing, and Azure-hosted monitoring dashboards. Authored a 10-page forensic post-mortem decomposing live-vs-paper PnL divergence into component risk factors with pre-registered out-of-sample filters and shadow-data logging.</li>
-            <li>Built a multi-model AI orchestration framework in Python dispatching configurable analytical agents across leading LLM APIs — cost-efficient infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</li>
+            <li>Built a multi-agent orchestration framework in Python: parallel dispatch across LLM providers with per-agent timeouts and fallback handling, structured tool-calling against typed schemas, and a deterministic consensus aggregator chosen for auditability over model-based voting. Powers Synapse's equity research pipeline and Numa's embedded analyst.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="tl-item">
+        <div class="tl-dot"></div>
+        <div class="tl-card">
+          <div class="tl-head">
+            <div>
+              <h3>USC — Directed Research</h3>
+              <p class="role">Under Professor Petros Ioannou</p>
+            </div>
+            <div class="tl-meta">
+              <span>Fall 2026 – Present</span>
+              <span class="loc">Los Angeles, CA</span>
+            </div>
+          </div>
+          <ul>
+            <li>Investigating the term structure of volatility relaxation following market shocks: whether implied volatility normalization across the VIX term structure follows power-law or exponential decay depending on shock regime. Preliminary results show large endogenous dislocations exhibit power-law decay with a maturity gradient across the term structure, while policy-resolved shocks revert exponentially. Ongoing.</li>
           </ul>
         </div>
       </div>
@@ -908,7 +932,7 @@
             </div>
           </div>
           <ul>
-            <li>Identified and quantified data quality gaps in loan-application document processing for major Italian financial services clients; designed a structured evaluation framework with 50+ tested variants, improving extraction accuracy from ~70% to 90%+ and eliminating manual review bottlenecks for credit risk teams.</li>
+            <li>Shipped a production RAG chatbot deployed on an insurance client's live website with real external users. Owned prompt design constraining outputs to retrieved context, and built the evaluation harness: golden question sets, retrieval-relevance checks, post-launch conversation-log review, and hallucination auditing.</li>
           </ul>
         </div>
       </div>
@@ -946,7 +970,7 @@
             </div>
           </div>
           <ul>
-            <li>Designed a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications enabling €10B+ in transactions.</li>
+            <li>Supported the design of a secondary-market tax-credit platform adopted by 5+ major financial institutions, translating investor workflow requirements into technical specifications and preparing client-facing documentation, enabling billions of euros in transactions.</li>
           </ul>
         </div>
       </div>
@@ -979,7 +1003,7 @@
           <h3>Multi-Model AI Orchestration Framework</h3>
         </div>
         <p class="tech">Python · Multi-LLM Orchestration · FastAPI · Azure · Pydantic</p>
-        <p class="desc">Python framework dispatching configurable analytical agents across leading LLM APIs — cost-efficient infrastructure for automating research, monitoring, and reporting workflows. Proof-of-concept testing for investment risk automation: document summarization, data aggregation, anomaly flagging, and dashboard generation.</p>
+        <p class="desc">Reusable orchestration layer for dispatching agents across multiple LLM providers in parallel: per-agent timeouts and fallback handling, structured tool-calling against typed schemas enforcing validated outputs, and a deterministic consensus aggregator chosen for auditability over model-based voting. Adding a new agent or data source is a single adapter, not a rewrite. Powers Synapse's equity research pipeline and Numa's embedded analyst.</p>
       </article>
 
       <article class="project">
@@ -990,11 +1014,11 @@
           </div>
         </div>
         <p class="tech">Next.js · TypeScript · Claude Sonnet · Claude Vision · ElevenLabs · Supabase</p>
-        <p class="desc">Six-agent clinical decision-support system for physical therapy, built in 24 hours with typed inter-agent contracts. Claude Vision with MediaPipe pose detection, voice guidance via ElevenLabs. 2nd place at the Caltech × UCLA × USC Claude Hackathon.</p>
+        <p class="desc">Six-agent clinical decision-support system for physical therapy, built in 12 hours with typed inter-agent contracts. Claude Vision with MediaPipe pose detection, voice guidance via ElevenLabs. 2nd place at the Caltech × UCLA × USC Claude Hackathon.</p>
         <div class="metrics">
           <div class="metric"><span class="v">2nd</span><span class="l">of 50+ Teams</span></div>
           <div class="metric"><span class="v">6</span><span class="l">Agents</span></div>
-          <div class="metric"><span class="v">24</span><span class="l">Hours to Build</span></div>
+          <div class="metric"><span class="v">12</span><span class="l">Hours to Build</span></div>
         </div>
       </article>
 
@@ -1003,9 +1027,8 @@
           <h3>Synapse — Multi-Model Autonomous Trading System</h3>
         </div>
         <p class="tech">Python · Multi-LLM Orchestration · Alpaca · Docker · PostgreSQL</p>
-        <p class="desc">Autonomous trading system orchestrating five LLM APIs across 50+ US equities. Integrates real-time market data, volatility and regime signals, and model-consensus logic into a Dockerized pipeline with automated execution via Alpaca.</p>
+        <p class="desc">Autonomous equity research and trading system built on the orchestration framework above: parallel agent dispatch across 50+ US equities, real-time market data and regime signals feeding into typed schemas, and automated trade execution via Alpaca in a Dockerized pipeline with PostgreSQL state persistence and full execution logging.</p>
         <div class="metrics">
-          <div class="metric"><span class="v">5</span><span class="l">Models Orchestrated</span></div>
           <div class="metric"><span class="v">50+</span><span class="l">US Equities</span></div>
           <div class="metric"><span class="v">24/7</span><span class="l">Dockerized Uptime</span></div>
         </div>
